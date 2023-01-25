@@ -68,7 +68,7 @@ const Banner = () => {
 
   return (
     <div ref={slideRef} className="w-full select-none relative">
-    <div className="w-full h-60 ">
+    <div className="w-full h-40 ">
       <img className='h-full w-full' src={featuredProducts[currentIndex]} alt="" />
     </div>
 
