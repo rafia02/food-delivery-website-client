@@ -7,11 +7,15 @@ import Banner from '../Banner/Banner';
 
 
 const Home = () => {
+
+
+    
     return (
         <div className='flex'>
 
 
            <div className='border w-3/4 border-red-400'>
+            <Banner></Banner>
             <h1>Home page all product catagoris show</h1>
            </div>
 
@@ -27,7 +31,7 @@ const Home = () => {
 
 
 
-           
+
         </div>
     );
 };
