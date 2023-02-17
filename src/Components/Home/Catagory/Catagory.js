@@ -74,20 +74,24 @@ const Catagory = () => {
           clickable: true,
         }}
         breakpoints={{
-          640: {
+          "@0.00": {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          "@0.75": {
             slidesPerView: 2,
             spaceBetween: 20,
           },
-          768: {
-            slidesPerView: 4,
+          "@1.00": {
+            slidesPerView: 3,
             spaceBetween: 40,
           },
-          1024: {
-            slidesPerView: 5,
+          "@1.50": {
+            slidesPerView: 4,
             spaceBetween: 50,
           },
         }}
-        // modules={[Pagination]}
+        modules={[Pagination]}
         className="mySwiper"
       >
 
@@ -95,13 +99,13 @@ const Catagory = () => {
 
         {
 
-          manueItem.map(item => <SwiperSlide className=' p-10 md:p-1 bg-orange-50 rounded drop-shadow-xl'>
+          manueItem.map(item => <SwiperSlide className=' p-1 bg-orange-50 rounded drop-shadow-xl'>
 
             <div className='text-center'>
               <div>
                 <img className='p-' src={item.img} alt="" />
               </div>
-              <h1 className='text-4xl md:text-2xl font-bold my-2 text-orange-600 '>{item.title}</h1>
+              <h1 className='text-2xl font-bold  mb-8 text-orange-600 '>{item.title}</h1>
             </div>
 
           </SwiperSlide>)
@@ -114,6 +118,8 @@ const Catagory = () => {
 
 
       </Swiper>
+
+
 
 
 
