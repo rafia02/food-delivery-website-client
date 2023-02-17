@@ -1,6 +1,7 @@
 import React from 'react';
 import OneFood from './OneFood';
 import img1 from '../../../images/icecream.png'
+import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -99,16 +100,16 @@ const Catagory = () => {
 
         {
 
-          manueItem.map(item => <SwiperSlide className=' p-1 bg-orange-50 rounded drop-shadow-xl'>
+          manueItem.map(item =><Link> <SwiperSlide className=' text-orange-600 hover:bg-orange-400 hover:text-white duration-500   p-1 bg-orange-50 rounded drop-shadow-xl '>
 
             <div className='text-center'>
-              <div>
-                <img className='p-' src={item.img} alt="" />
+              <div className=''>
+                <img className='w-full' src={item.img} alt="" />
               </div>
-              <h1 className='text-2xl font-bold  mb-8 text-orange-600 '>{item.title}</h1>
+              <h1 className='text-2xl font-bold  mb-8  '>{item.title}</h1>
             </div>
 
-          </SwiperSlide>)
+          </SwiperSlide> </Link>)
 
         }
 
