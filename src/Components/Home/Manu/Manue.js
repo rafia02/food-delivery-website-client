@@ -21,7 +21,7 @@ const Manue = () => {
     return (
         <div className=' w-full  flex flex-row overflow-y-auto  lg:overflow-hidden'>                 
              {
-                imgs.map((item, i)=> <img className='w-44' src={item.image} alt="" /> )
+                imgs.map((item, i)=> console.log(item) )
              } 
         </div>
     );
