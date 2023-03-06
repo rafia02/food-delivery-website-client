@@ -1,14 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useFetcher } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useQuery } from 'react-query';
-import { useEffect } from 'react';
+import { useState } from 'react';
+import Spinner from '../../Share/Spinner/Spinner';
+import ItemsProduct from './ItemsProduct'
+import { useContext } from 'react';
+import { Contex } from '../../../Context/AuthProvider';
+
 
 const Catagory = () => {
+  const {itemsManue,setItemsManue} = useContext(Contex)
 
 
 
@@ -24,28 +30,29 @@ const Catagory = () => {
   
 
 
+  if(isLoading){
+    <Spinner></Spinner>
+  }
 
-  const {data: manuItems =[]}= useQuery({
-    queryKey:['itemsProducts'],
-    queryFn: async()=>{
-      const res = await fetch(`http://localhost:5000/itemsProducts`)
-      const data = await res.json()
-      return data
-    }
-  })
+
+
 
 
 
 
   const handleManueItem =(id)=>{
 
-    console.log(id)
-    use
-    }
+   
+
+    fetch(`http://localhost:5000/itemsProducts/${id}`)
+    .then(res => res.json())
+    .then(data => setItemsManue(data))
+
 
   
 
   }
+
 
 
 
@@ -90,7 +97,7 @@ const Catagory = () => {
 
         {
 
-          catagoris?.map(item => <Link key={item._id}> <SwiperSlide  onClick={()=>handleManueItem(item.title)}  className=' text-yellow-600 hover:bg-yellow-100 hover:text-yellow-600 duration-500   p-1 bg-yellow-50 rounded drop-shadow-xl '>
+          catagoris?.map(item => <Link> <SwiperSlide  key={item._id}  onClick={()=>handleManueItem(item.title)}  className=' text-yellow-600 hover:bg-yellow-100 hover:text-yellow-600 duration-500   p-1 bg-yellow-50 rounded drop-shadow-xl '>
 
             <div className='text-center' >
                 

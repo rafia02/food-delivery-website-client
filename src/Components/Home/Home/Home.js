@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Contex } from '../../../Context/AuthProvider';
+import Spinner from '../../Share/Spinner/Spinner';
 import Banner from '../Banner/Banner';
 import Catagory from '../Catagory/Catagory';
+import ItemsProduct from '../Catagory/ItemsProduct'
 
 
 
@@ -10,6 +13,7 @@ import Catagory from '../Catagory/Catagory';
 
 const Home = () => {
 
+    const {itemsManue} = useContext(Contex)
 
 
     return (
@@ -19,6 +23,11 @@ const Home = () => {
            <div className='border w-full md:w-3/4 border-red-400'>
             <Banner></Banner>
             <Catagory></Catagory>
+
+            {
+                itemsManue ? <ItemsProduct></ItemsProduct> : <Spinner></Spinner>
+
+            }
             
            </div>
 
