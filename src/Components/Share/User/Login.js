@@ -56,6 +56,8 @@ const Login = () => {
                     <input type="submit" value="Login" className='text-white bg-sky-600 w-full py-2 mt-6 font-medium text-lg' />
                 </form>
 
+                <input type="submit" value="Google" className='text-white bg-green-400 w-full py-2 mt-6 font-medium text-lg' />
+          
             </div>
 
 
