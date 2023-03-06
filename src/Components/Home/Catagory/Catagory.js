@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import { useQuery } from 'react-query';
+import { useEffect } from 'react';
 
 const Catagory = () => {
 
@@ -22,6 +23,29 @@ const Catagory = () => {
 
   
 
+
+
+  const {data: manuItems =[]}= useQuery({
+    queryKey:['itemsProducts'],
+    queryFn: async()=>{
+      const res = await fetch(`http://localhost:5000/itemsProducts`)
+      const data = await res.json()
+      return data
+    }
+  })
+
+
+
+
+  const handleManueItem =(id)=>{
+
+    console.log(id)
+    use
+    }
+
+  
+
+  }
 
 
 
@@ -61,25 +85,30 @@ const Catagory = () => {
 
 
 
+
+
+
         {
 
-          catagoris?.map(item => <Link> <SwiperSlide className=' text-orange-600 hover:bg-orange-100 hover:text-orange-600 duration-500   p-1 bg-orange-50 rounded drop-shadow-xl '>
+          catagoris?.map(item => <Link key={item._id}> <SwiperSlide  onClick={()=>handleManueItem(item.title)}  className=' text-yellow-600 hover:bg-yellow-100 hover:text-yellow-600 duration-500   p-1 bg-yellow-50 rounded drop-shadow-xl '>
 
             <div className='text-center' >
-
-                <Link to={`/${item.title}`}>liiiii</Link>
+                
               <div className="avatar">
                 <div className="w-28 rounded-full">
                   <img src={item.img} alt="" />
                 </div>
+                
               </div>
 
 
 
-              <h1 className='text-xl font-bold font-serif mb-4  '>{item.title}</h1>
+              <h1 className='text-xl font-bold font-serif mb-4 mt-2 '>{item.title}</h1>
+              {/* <button className='mb-4 mt-2 btn bg-yellow-500 btn-xs'>More Items</button> */}
             </div>
 
-          </SwiperSlide> </Link>)
+          </SwiperSlide> 
+          </Link>)
 
         }
 
