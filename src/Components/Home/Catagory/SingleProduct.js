@@ -5,11 +5,12 @@ import { BsCartFill } from "react-icons/bs";
 
 const SingleProduct = ({ manue }) => {
     console.log(manue)
-    const { catagoris, picture, title, descreption } = manue
+    const { catagoris, picture, title, descreption, price } = manue
     return (
-        <div className="card bg-base-100 shadow-md">
-            <figure><img className='w-full h-48' src={picture} alt="" /></figure>
+        <div className="rounded bg-rose-50 hover:shadow-md">
+            <figure><img className='w-full h-56 rounded' src={picture} alt="" /></figure>
             <div className="card-body ">
+                <h1 className="text-2xl font-bold italic">Price: {price}$</h1>
                 <h2 className="card-title">
                     {title}
                 </h2>
@@ -20,6 +21,7 @@ const SingleProduct = ({ manue }) => {
                     <div>
 
                         <BsCartFill></BsCartFill>
+
 
 
                     </div>
