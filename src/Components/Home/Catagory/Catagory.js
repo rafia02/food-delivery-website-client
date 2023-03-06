@@ -1,70 +1,33 @@
 import React from 'react';
-import OneFood from './OneFood';
-import img1 from '../../../images/icecream.png'
 import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import { useQuery } from 'react-query';
 
 const Catagory = () => {
-  const manueItem = [
-    {
-      id: 1,
-      img: img1,
-      title: 'Burgar'
-    },
-    {
-      id: 2,
-      img: img1,
-      title: 'Cookies'
-    },
-    {
-      id: 3,
-      img: img1,
-      title: 'Biriyani'
-    },
-    {
-      id: 4,
-      img: img1,
-      title: 'MUTTON'
-    },
-    {
-      id: 5,
-      img: img1,
-      title: 'Sticky Rice'
-    },
-    {
-      id: 6,
-      img: img1,
-      title: 'Burgar'
-    },
-    {
-      id: 7,
-      img: img1,
-      title: 'Burgar'
-    },
-    {
-      id: 8,
-      img: img1,
-      title: 'Burgar'
-    },
-    {
-      id: 9,
-      img: img1,
-      title: 'Burgar'
-    },
-    {
-      id: 10,
-      img: img1,
-      title: 'Burgar'
-    },
-  ]
+
+
+
+  const { data: catagoris = [], isLoading } = useQuery({
+    queryKey: ["catagoris"],
+    queryFn: async () => {
+      const res = await fetch("http://localhost:5000/allCatagoris");
+      const data = await res.json()
+      return data
+    }
+  })
+
+  
+
+
+
 
 
   return (
-    <div className='my-20'>
+    <div className='my-10'>
 
 
 
@@ -100,13 +63,19 @@ const Catagory = () => {
 
         {
 
-          manueItem.map(item =><Link> <SwiperSlide className=' text-orange-600 hover:bg-orange-400 hover:text-white duration-500   p-1 bg-orange-50 rounded drop-shadow-xl '>
+          catagoris?.map(item => <Link> <SwiperSlide className=' text-orange-600 hover:bg-orange-100 hover:text-orange-600 duration-500   p-1 bg-orange-50 rounded drop-shadow-xl '>
 
             <div className='text-center'>
-              <div className=''>
-                <img className='w-full' src={item.img} alt="" />
+
+              <div className="avatar">
+                <div className="w-28 rounded-full">
+                  <img src={item.img} alt="" />
+                </div>
               </div>
-              <h1 className='text-2xl font-bold  mb-8  '>{item.title}</h1>
+
+
+
+              <h1 className='text-xl font-bold font-serif mb-4  '>{item.title}</h1>
             </div>
 
           </SwiperSlide> </Link>)
@@ -127,4 +96,3 @@ const Catagory = () => {
 export default Catagory;
 
 
-// https://insanelygoodrecipes.com/category/desserts/cookies/

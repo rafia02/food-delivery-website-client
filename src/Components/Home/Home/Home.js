@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
 import Catagory from '../Catagory/Catagory';
-import Manue from '../Manu/Manue';
+
 
 
 
@@ -18,9 +18,7 @@ const Home = () => {
 
            <div className='border w-full md:w-3/4 border-red-400'>
             <Banner></Banner>
-            {/* <Manue></Manue> */}
             <Catagory></Catagory>
-           
             
            </div>
 
