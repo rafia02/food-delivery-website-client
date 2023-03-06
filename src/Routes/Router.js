@@ -11,13 +11,13 @@ export const router = createBrowserRouter([
             path: '/',
             element: <Home></Home>
         },
-        {
-            path: '/',
-            element: <ItemsProduct></ItemsProduct>,
-            loader: async ( {params} ) =>{
-                return fetch(`http://localhost:5000/itemsProducts/${params.title}`)
-            }
-        }
+        // {
+        //     path: '/',
+        //     element: <ItemsProduct></ItemsProduct>,
+        //     loader: async ( {params} ) =>{
+        //         return fetch(`http://localhost:5000/itemsProducts/${params.title}`)
+        //     }
+        // }
          
     ]}
 ])

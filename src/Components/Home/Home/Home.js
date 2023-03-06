@@ -13,42 +13,43 @@ import ItemsProduct from '../Catagory/ItemsProduct'
 
 const Home = () => {
 
-    const {itemsManue} = useContext(Contex)
+    const { itemsManue } = useContext(Contex)
 
 
     return (
-        <div className='flex flex-col md:flex-row'>
+        <div>
 
 
-           <div className='border w-full md:w-3/4 border-red-400'>
-            <Banner></Banner>
-            <Catagory></Catagory>
+            <div className='flex flex-col md:flex-row'>
 
-            {
-                itemsManue ? <ItemsProduct></ItemsProduct> : <Spinner></Spinner>
-
-            }
-            
-           </div>
+                <div className='border w-full md:w-3/4 border-red-400'>
+                    <Banner></Banner>
+                    <Catagory></Catagory>
+                </div>
 
 
+                <div className='border  w-full md:w-1/4 mt-10 md:mt-0 border-violet-500'>
+                    <h1>Product images</h1>
+                    <h1>Product images</h1>
+                    <h1>Product images</h1>
+                    <h1>Product images</h1>
+                    <h1>Manu bar</h1>
+                </div>
 
-
-
-
-           <div className='border  w-full md:w-1/4 mt-10 md:mt-0 border-violet-500'>
-               <h1>Product images</h1>
-               <h1>Product images</h1>
-               <h1>Product images</h1>
-               <h1>Product images</h1>
-
-                <h1>Manu bar</h1>
-           </div>
+            </div>
 
 
 
 
 
+
+
+            <div>
+                {
+                    itemsManue ? <ItemsProduct></ItemsProduct> : <Spinner></Spinner>
+
+                }
+            </div>
         </div>
     );
 };
