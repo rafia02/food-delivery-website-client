@@ -13,6 +13,7 @@ const Banner = () => {
     "https://www.allrecipes.com/thmb/IKNsbRltV8YzbkzKsSWr4_Gt2OM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6665215-e809c5685566417d86ace12860feae06.jpg",
     "https://www.polarbd.com/images/sliders/home/homeslide02.jpg",
     "https://www.polarbd.com/images/sliders/home/homeslide03.jpg",
+    "https://images.deliveryhero.io/image/fd-bd/LH/jbwv-hero.jpg?width=1000&height=250&quality=45",
     "https://www.modernfoods.co.in/wp-content/uploads/2017/12/plum-cake-banner.png",
     "https://www.winni.in/celebrate-relations/wp-content/uploads/2019/03/plum-cake.jpg"
 

@@ -18,22 +18,22 @@ const Catagory = () => {
     {
       id: 2,
       img: img1,
-      title: 'Burgar'
+      title: 'Cookies'
     },
     {
       id: 3,
       img: img1,
-      title: 'Burgar'
+      title: 'Biriyani'
     },
     {
       id: 4,
       img: img1,
-      title: 'Burgar'
+      title: 'MUTTON'
     },
     {
       id: 5,
       img: img1,
-      title: 'Burgar'
+      title: 'Sticky Rice'
     },
     {
       id: 6,
@@ -113,23 +113,7 @@ const Catagory = () => {
 
         }
 
-
-
-
-
-
       </Swiper>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -141,3 +125,6 @@ const Catagory = () => {
 };
 
 export default Catagory;
+
+
+// https://insanelygoodrecipes.com/category/desserts/cookies/
