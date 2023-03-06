@@ -5,7 +5,7 @@ import logo from '../../../images/hangry3.png'
 const Navber = () => {
     const [navbar, setNavbar] = useState(false);
     return (
-        <nav className="w-full bg-white shadow">
+        <nav className="w-full bg-white shadow sticky top-0 z-30 ">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -67,7 +67,7 @@ const Navber = () => {
                                 <Link to="/"> Cart </Link>
                             </li>
                             <li className="text-gray-600 font-bold hover:text-red-500">
-                                <Link to="/">Login</Link>
+                                <Link to="/login">Login</Link>
                             </li>
                         </ul>
                     </div>
