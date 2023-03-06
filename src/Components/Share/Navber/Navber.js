@@ -61,13 +61,13 @@ const Navber = () => {
                                 <Link to="/">Home</Link>
                             </li>
                             <li className="text-gray-600 font-bold hover:text-red-500">
-                                <Link to="/">Blog</Link>
+                                <Link to="/">Collections</Link>
                             </li>
                             <li className="text-gray-600 font-bold hover:text-red-500">
-                                <Link to="/">About US</Link>
+                                <Link to="/"> Cart </Link>
                             </li>
                             <li className="text-gray-600 font-bold hover:text-red-500">
-                                <Link to="/">Contact US</Link>
+                                <Link to="/">Login</Link>
                             </li>
                         </ul>
                     </div>
