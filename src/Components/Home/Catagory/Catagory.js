@@ -65,8 +65,9 @@ const Catagory = () => {
 
           catagoris?.map(item => <Link> <SwiperSlide className=' text-orange-600 hover:bg-orange-100 hover:text-orange-600 duration-500   p-1 bg-orange-50 rounded drop-shadow-xl '>
 
-            <div className='text-center'>
+            <div className='text-center' >
 
+                <Link to={`/${item.title}`}>liiiii</Link>
               <div className="avatar">
                 <div className="w-28 rounded-full">
                   <img src={item.img} alt="" />
