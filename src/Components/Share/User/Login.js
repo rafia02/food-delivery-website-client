@@ -18,9 +18,9 @@ const Login = () => {
 
 
     return (
-        <div className='flex justify-center items-center h-96 mt-14'>
+        <div className='flex justify-center items-center h-96 mt-24'>
 
-            <div className='w-1/3  bg-gradient-to-b from-indigo-300 py-10 px-10 '>
+            <div className='w-1/3  bg-gradient-to-b from-rose-200 py-10 px-10 '>
                 <h1 className='text-center font-serif text-3xl font-bold text-sky-400'>Login</h1>
 
                 <form onSubmit={handleSubmit(handleLogin)}>
@@ -53,7 +53,7 @@ const Login = () => {
 
 
 
-                    <input type="submit" value="Login" className='text-white bg-sky-600 w-full py-2 mt-6 font-medium text-lg' />
+                    <input type="submit" value="Login" className='text-white    bg-gradient-to-r from-indigo-500 via-yellow-300 to-pink-500               w-full py-2 mt-6 font-medium text-lg' />
                 </form>
 
                 <input type="submit" value="Google" className='text-white bg-green-400 w-full py-2 mt-6 font-medium text-lg' />
