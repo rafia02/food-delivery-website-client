@@ -1,9 +1,32 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { Contex } from '../../../Context/AuthProvider';
 import logo from '../../../images/hangry3.png'
 
 const Navber = () => {
     const [navbar, setNavbar] = useState(false);
+    const {userSingOut, user}= useContext(Contex)
+    
+
+
+
+    const handleSingOut =() => {
+        userSingOut()
+        .then(res => {
+            console.log(res)
+            toast.success("Success SingOut...!")
+        })
+        .catch((err) => {
+            console.log(err)
+            toast.error("Sorry, Filed SingOut...!")
+        })
+    }
+
+
+
+
+
     return (
         <nav className="w-full bg-white shadow sticky top-0 z-30 ">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -66,9 +89,24 @@ const Navber = () => {
                             <li className="text-gray-600 font-bold hover:text-red-500">
                                 <Link to="/"> Cart </Link>
                             </li>
-                            <li className="text-gray-600 font-bold hover:text-red-500">
+
+
+
+                          {
+                            user?.email ?  <li className="text-gray-600 font-bold hover:text-red-500">
+                            <Link to="/" onClick={handleSingOut} >SingOut</Link>
+                           </li> : <li className="text-gray-600 font-bold hover:text-red-500">
                                 <Link to="/login">Login</Link>
                             </li>
+                          }
+
+
+
+
+
+
+
+        
                         </ul>
                     </div>
                 </div>

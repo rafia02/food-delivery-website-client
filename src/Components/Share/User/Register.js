@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { Contex } from '../../../Context/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const Register = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const {userCreate} = useContext(Contex)
 
 
 
 
      const handleRegister= (data)=> {
         console.log(data)
+
+        userCreate(data.email, data.password)
+        .then( (res) => {
+            const user = res.user;
+            console.log(user)
+            toast.success("Success Sing Up...!")
+        } )
+        .catch( (err) => console.log(err) )
      }
 
 
@@ -41,7 +53,7 @@ const Register = () => {
 
                     <div className="form-control w-full ">
                         <label className="label"><span className="label-text font-serif text-lg"> Password </span> </label>
-                        <input type="text" placeholder="Name" {...register("password", { required: "Your Password required" })} className="input input-bordered w-full " />
+                        <input type="password" placeholder="Name" {...register("password", { required: "Your Password required" })} className="input input-bordered w-full " />
                         {errors.password && <span className='text-red-600 font-serif '> {errors.password.message} </span>}
                     </div>
 
@@ -55,7 +67,7 @@ const Register = () => {
                     <h1 className='font-serif'> Already have an account?  <span> <Link to="/login">Login</Link> </span>  </h1>
                 </form>
 
-                <input type="submit" value="Google" className='text-white bg-green-400 w-full py-2 mt-6 font-medium text-lg' />
+                
           
             </div>
 

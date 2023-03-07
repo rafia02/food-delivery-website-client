@@ -1,15 +1,41 @@
-import React from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { Contex } from '../../../Context/AuthProvider';
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const {userSingIn, userGoogleSingIn } = useContext(Contex)    
+    
+    
 
-
-
+    const handleGoogle = () => {
+        const provider= new GoogleAuthProvider()
+        userGoogleSingIn(provider)
+        .then((res)=> {
+            console.log(res.user)
+            toast.success("Success Google Login..!")
+        })
+        .catch((err) => {
+            console.log(err)
+            toast.error("Sorry, Filed Google Login..!")
+        })
+    }
 
     const handleLogin =(data) => {
         console.log(data)
+        userSingIn(data.email, data.password)
+        .then((res)=> {
+            const user = res.user;
+            console.log(user)
+            toast.success("Success Login...!")
+        })
+        .catch((err)=> {
+            console.log(err)
+            toast.error("Sorry, Filed Login...!")
+        })
     }
 
 
@@ -36,7 +62,7 @@ const Login = () => {
 
                     <div className="form-control w-full ">
                         <label className="label"><span className="label-text font-serif text-lg"> Password </span> </label>
-                        <input type="text" placeholder="Name" {...register("password", { required: "Your Password required" })} className="input input-bordered w-full " />
+                        <input type="password" placeholder="Name" {...register("password", { required: "Your Password required" })} className="input input-bordered w-full " />
                         {errors.password && <span className='text-red-600 font-serif '> {errors.password.message} </span>}
                     </div>
 
@@ -50,7 +76,7 @@ const Login = () => {
                     <h1 className='font-serif'> Create new an account? <span> <Link to='/singup'>Sing up</Link> </span> </h1>
                 </form>
 
-                <input type="submit" value="Google" className='text-white bg-green-400 w-full py-2 mt-6 font-medium text-lg' />
+                <input type="submit" onClick={ handleGoogle} value="Google" className='text-white bg-green-400 w-full py-2 mt-6 font-medium text-lg' />
           
             </div>
 
