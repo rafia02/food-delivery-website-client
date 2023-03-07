@@ -1,10 +1,14 @@
 import React from 'react';
 import { BsCartFill, BsFillHeartFill, BsStarFill, BsStarHalf } from "react-icons/bs";
 
-const Food = ({food}) => {
-    
-    const { catagoris, picture, title, descreption, price } = food
-    
+
+const CatagoryItems = ({ catagori }) => {
+
+    console.log(catagori)
+    const { catagoris, picture, title, descreption, price } = catagori;
+
+
+
     return (
         <div className="rounded  bg-rose-50 hover:shadow-md mb-7">
             <figure><img className='w-full h-64 rounded' src={picture} alt="" /></figure>
@@ -26,7 +30,7 @@ const Food = ({food}) => {
                     {title}
                 </h2>
                 <p>{descreption.length > 70 ? <p>{descreption.slice(0, 70) + '...'}</p> : <p>{descreption}</p>}</p>
-                
+
                 <div className='flex justify-center mt-3 text-yellow-500 opacity-80'>
                     <BsStarFill></BsStarFill>
                     <BsStarFill></BsStarFill>
@@ -39,4 +43,4 @@ const Food = ({food}) => {
     );
 };
 
-export default Food;
+export default CatagoryItems;

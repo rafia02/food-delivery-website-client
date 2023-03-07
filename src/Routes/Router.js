@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import AllFoodLayout from "../Components/AllFoods/AllFoodLayout";
 import AllFoods from "../Components/AllFoods/AllFoods";
+import CatagoryFoods from "../Components/AllFoods/FoodCatagory/CatagoryFoods";
 import ItemsProduct from "../Components/Home/Catagory/ItemsProduct";
 import Home from "../Components/Home/Home/Home";
 import Login from "../Components/Share/User/Login";
@@ -36,6 +37,13 @@ export const router = createBrowserRouter([
                     path: '/allfoodlayout',
                     loader:async()=> fetch('http://localhost:5000/allfood'),
                     element: <AllFoods></AllFoods>
+                },
+                {
+                    path: "/allfoodlayout/food/:title",
+                    element: <CatagoryFoods></CatagoryFoods>,
+                    loader: async ({params}) => {
+                        return fetch(`http://localhost:5000/itemsProducts/${params.title}`)
+                    }
                 }
             ]
         }
