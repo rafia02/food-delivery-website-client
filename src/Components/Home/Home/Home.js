@@ -22,13 +22,13 @@ const Home = () => {
 
             <div className='flex flex-col md:flex-row'>
 
-                <div className='border w-full md:w-3/4 border-red-400'>
+                <div className=' w-full md:w-3/4 '>
                     <Banner></Banner>
                     <Catagory></Catagory>
                 </div>
 
 
-                <div className='border  w-full md:w-1/4 mt-10 md:mt-0 border-violet-500'>
+                <div className=' w-full md:w-1/4 mt-10 md:mt-0 '>
                     <h1>Product images</h1>
                     <h1>Product images</h1>
                     <h1>Product images</h1>
