@@ -97,7 +97,7 @@ const Catagory = () => {
 
         {
 
-          catagoris?.map(item => <Link> <SwiperSlide  key={item._id}  onClick={()=>handleManueItem(item.title)}  className=' text-rose-600 hover:bg-rose-200 hover:text-rose-700   p-1 bg-rose-100   duration-500 rounded drop-shadow-xl '>
+          catagoris?.map(item => <Link> <SwiperSlide  key={item._id}  onClick={()=>handleManueItem(item.title)}  className=' text-rose-600 hover:bg-rose-100 hover:text-rose-700   p-1   duration-500 rounded drop-shadow-xl '>
 
             <div className='text-center' >
                 
