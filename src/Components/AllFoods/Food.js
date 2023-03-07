@@ -6,7 +6,7 @@ const Food = ({food}) => {
     const { catagoris, picture, title, descreption, price } = food
     
     return (
-        <div className="rounded  bg-rose-50 hover:shadow-md">
+        <div className="rounded  bg-rose-50 hover:shadow-md mb-7">
             <figure><img className='w-full h-64 rounded' src={picture} alt="" /></figure>
             <div className="card-body ">
                 <div className='flex justify-between items-center'>

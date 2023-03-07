@@ -30,7 +30,6 @@ const AuthProvider = ({children}) => {
     
   const unSubcribe= onAuthStateChanged(auth, (carrentUser) => {
        if(carrentUser){
-        console.log(carrentUser)
         setUser(carrentUser)
        }
 

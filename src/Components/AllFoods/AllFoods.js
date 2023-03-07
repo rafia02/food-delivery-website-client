@@ -6,9 +6,9 @@ const AllFoods = () => {
     const allFoods = useLoaderData()
     
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-10'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-7 mt-12'>
             {
-                allFoods.map(food => <Food
+                allFoods?.map(food => <Food
                     key={food._id}
                     food={food}
 

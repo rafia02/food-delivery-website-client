@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import AllFoodLayout from "../Components/AllFoods/AllFoodLayout";
 import AllFoods from "../Components/AllFoods/AllFoods";
 import ItemsProduct from "../Components/Home/Catagory/ItemsProduct";
 import Home from "../Components/Home/Home/Home";
@@ -26,6 +27,17 @@ export const router = createBrowserRouter([
             path: '/allfood',
             loader:async()=> fetch('http://localhost:5000/allfood'),
             element: <AllFoods></AllFoods>
+        },
+        {
+            path:"/allfoodlayout",
+            element: <AllFoodLayout></AllFoodLayout>,
+            children: [
+                {
+                    path: '/allfoodlayout',
+                    loader:async()=> fetch('http://localhost:5000/allfood'),
+                    element: <AllFoods></AllFoods>
+                }
+            ]
         }
          
     ]}
