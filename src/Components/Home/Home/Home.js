@@ -19,9 +19,6 @@ import DeliveryCart from '../DeliveryCart/DeliveryCart';
 
 
 
-
-
-
 const Home = () => {
 
     const { itemsManue } = useContext(Contex)
