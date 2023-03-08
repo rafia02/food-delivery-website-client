@@ -38,7 +38,7 @@ const Home = () => {
 
                 <div className=' w-full md:w-1/4 mt-10 md:mt-0 bg-rose-100'>
 
-                    <div className='fixed bg-rose-100 '>
+                    <div className=' bg-rose-100 '>
                         <div>
                             <Lottie animationData={delivery} loop={true} />;
                         </div>
