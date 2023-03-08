@@ -4,8 +4,14 @@ import Spinner from '../../Share/Spinner/Spinner';
 import Banner from '../Banner/Banner';
 import Catagory from '../Catagory/Catagory';
 import ItemsProduct from '../Catagory/ItemsProduct'
+<<<<<<< HEAD
 import Lottie from "lottie-react";
 import delivery from '../../../images/delivery.json'
+=======
+import Choose from '../Choose/Choose';
+
+
+>>>>>>> 3208b87bb9316f66b393f39f01a67700ca6bf1d9
 
 
 
@@ -50,6 +56,8 @@ const Home = () => {
 
                 }
             </div>
+
+            <Choose></Choose>
         </div>
     );
 };

@@ -3,6 +3,7 @@ import AllFoodLayout from "../Components/AllFoods/AllFoodLayout";
 import AllFoods from "../Components/AllFoods/AllFoods";
 import CatagoryFoods from "../Components/AllFoods/FoodCatagory/CatagoryFoods";
 import ItemsProduct from "../Components/Home/Catagory/ItemsProduct";
+import Choose from "../Components/Home/Choose/Choose";
 import Home from "../Components/Home/Home/Home";
 import Login from "../Components/Share/User/Login";
 import Register from "../Components/Share/User/Register";
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>
+        },
+        {
+            path: '/',
+            element: <Choose></Choose> 
         },
         {
             path: "/login",
