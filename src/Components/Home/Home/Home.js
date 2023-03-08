@@ -10,6 +10,7 @@ import delivery from '../../../images/delivery.json'
 
 import Choose from '../Choose/Choose';
 import Button from '../../Share/Button/Button';
+import DeliveryCart from '../DeliveryCart/DeliveryCart';
 
 
 
@@ -44,6 +45,7 @@ const Home = () => {
                         <div className='pb-10 px-5'>
                             <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
                             <Button text={"Continue Shopping"}></Button>
+                            <DeliveryCart></DeliveryCart>
                         </div>
                     </div>
 
