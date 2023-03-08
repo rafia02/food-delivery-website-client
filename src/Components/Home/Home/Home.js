@@ -4,8 +4,17 @@ import Spinner from '../../Share/Spinner/Spinner';
 import Banner from '../Banner/Banner';
 import Catagory from '../Catagory/Catagory';
 import ItemsProduct from '../Catagory/ItemsProduct'
+
+import Lottie from "lottie-react";
+import delivery from '../../../images/delivery.json'
+
 import Choose from '../Choose/Choose';
 import Count from '../Count/Count';
+
+import Button from '../../Share/Button/Button';
+import DeliveryCart from '../DeliveryCart/DeliveryCart';
+
+
 
 
 
@@ -30,10 +39,19 @@ const Home = () => {
                 </div>
 
 
-                <div className=' w-full md:w-1/4 mt-10 md:mt-0 '>
-                    <img src="https://media.istockphoto.com/id/524166326/zh/%E7%85%A7%E7%89%87/yellow-credit-card.jpg?s=1024x1024&w=is&k=20&c=wN5jWLJD-apCXLL02c-0-xlgKSg56SD_rzbVzAKOBlg=" alt="" />
+                <div className=' w-full md:w-1/4 mt-10 md:mt-0 bg-rose-100'>
 
-                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia et voluptas accusantium, officiis aperiam hic nihil? Aliquam minus iste similique, odio dignissimos inventore, consequatur quaerat praesentium repudiandae molestiae maiores eveniet.</h1>
+                    <div className='fixed bg-rose-100 '>
+                        <div>
+                            <Lottie animationData={delivery} loop={true} />;
+                        </div>
+                        <div className='pb-10 px-5'>
+                            <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
+                            <Button text={"Continue Shopping"}></Button>
+                            <DeliveryCart></DeliveryCart>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
