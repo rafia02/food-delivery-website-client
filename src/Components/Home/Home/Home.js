@@ -4,14 +4,15 @@ import Spinner from '../../Share/Spinner/Spinner';
 import Banner from '../Banner/Banner';
 import Catagory from '../Catagory/Catagory';
 import ItemsProduct from '../Catagory/ItemsProduct'
-<<<<<<< HEAD
+
 import Lottie from "lottie-react";
 import delivery from '../../../images/delivery.json'
-=======
+
 import Choose from '../Choose/Choose';
+import Button from '../../Share/Button/Button';
 
 
->>>>>>> 3208b87bb9316f66b393f39f01a67700ca6bf1d9
+
 
 
 
@@ -34,12 +35,18 @@ const Home = () => {
                 </div>
 
 
-                <div className=' w-full md:w-1/4 mt-10 md:mt-0 '>
+                <div className=' w-full md:w-1/4 mt-10 md:mt-0 bg-rose-100'>
 
-                    <div>
-                        <Lottie animationData={delivery} loop={true} />;
+                    <div className='fixed bg-rose-100 '>
+                        <div>
+                            <Lottie animationData={delivery} loop={true} />;
+                        </div>
+                        <div className='pb-10 px-5'>
+                            <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
+                            <Button text={"Continue Shopping"}></Button>
+                        </div>
                     </div>
-                    
+
                 </div>
 
             </div>
