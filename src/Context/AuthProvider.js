@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createContext } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase.config';
@@ -10,6 +10,14 @@ const auth = getAuth(app)
 
 
 const AuthProvider = ({children}) => {
+
+  useEffect((id="Seafood")=>{
+    fetch(`http://localhost:5000/itemsProducts/${id}`)
+    .then(res => res.json())
+    .then(data => setItemsManue(data))
+
+  },[])
+  
     const [itemsManue, setItemsManue ] = useState([])
     const [user, setUser] = useState([])
 

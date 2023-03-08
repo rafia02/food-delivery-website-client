@@ -12,9 +12,9 @@ const SingleProduct = ({ manue }) => {
             <div className="card-body ">
                 <div className='flex justify-between items-center'>
                     <div className='flex justify-center items-center '>
-                        <BsCartFill className="text-xl mr-5 ml-0 duration-500 opacity-70 hover:opacity-100 hover:scale-125 skew-y-3  translate-x-4 "></BsCartFill>
+                       
 
-                        <BsFillHeartFill className="text-xl  duration-500 opacity-70 hover:opacity-100 hover:scale-105 skew-y-3 translate-x-4  "></BsFillHeartFill>
+                        <BsFillHeartFill className="text-2xl  duration-500 opacity-70 hover:opacity-100 hover:scale-105 skew-y-3 translate-x-4  "></BsFillHeartFill>
                     </div>
 
                     <div>
@@ -35,6 +35,12 @@ const SingleProduct = ({ manue }) => {
                     <BsStarFill></BsStarFill>
                     <BsStarHalf></BsStarHalf>
                 </div>
+
+                <button className='flex justify-center p-1 rounded items-center mt-2 bg-rose-400 text-white font-bold '>
+                <BsCartFill className='mr-2'></BsCartFill>
+                     Add to cart
+                </button>
+
             </div>
         </div>
     );
