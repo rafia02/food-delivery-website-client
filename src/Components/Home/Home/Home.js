@@ -4,8 +4,8 @@ import Spinner from '../../Share/Spinner/Spinner';
 import Banner from '../Banner/Banner';
 import Catagory from '../Catagory/Catagory';
 import ItemsProduct from '../Catagory/ItemsProduct'
-
-
+import Lottie from "lottie-react";
+import delivery from '../../../images/delivery.json'
 
 
 
@@ -29,9 +29,11 @@ const Home = () => {
 
 
                 <div className=' w-full md:w-1/4 mt-10 md:mt-0 '>
-                    <img src="https://media.istockphoto.com/id/524166326/zh/%E7%85%A7%E7%89%87/yellow-credit-card.jpg?s=1024x1024&w=is&k=20&c=wN5jWLJD-apCXLL02c-0-xlgKSg56SD_rzbVzAKOBlg=" alt="" />
 
-                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia et voluptas accusantium, officiis aperiam hic nihil? Aliquam minus iste similique, odio dignissimos inventore, consequatur quaerat praesentium repudiandae molestiae maiores eveniet.</h1>
+                    <div>
+                        <Lottie animationData={delivery} loop={true} />;
+                    </div>
+                    
                 </div>
 
             </div>
