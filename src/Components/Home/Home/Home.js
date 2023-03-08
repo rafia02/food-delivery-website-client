@@ -4,6 +4,7 @@ import Spinner from '../../Share/Spinner/Spinner';
 import Banner from '../Banner/Banner';
 import Catagory from '../Catagory/Catagory';
 import ItemsProduct from '../Catagory/ItemsProduct'
+import Choose from '../Choose/Choose';
 
 
 
@@ -48,6 +49,8 @@ const Home = () => {
 
                 }
             </div>
+
+            <Choose></Choose>
         </div>
     );
 };
