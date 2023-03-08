@@ -6,13 +6,13 @@ import { Contex } from '../../../Context/AuthProvider';
 
 const SingleProduct = ({ manue }) => {
     const {user} = useContext(Contex)
-    console.log(user)
+
 
     const { catagoris, picture, title, descreption, price, _id } = manue
 
 
     const handleAddToCart =(id)=>{
-        console.log(id)
+
 
         const cartProduct ={
             email: user.email,
