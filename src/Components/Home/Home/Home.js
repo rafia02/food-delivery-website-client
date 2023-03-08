@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import Catagory from '../Catagory/Catagory';
 import ItemsProduct from '../Catagory/ItemsProduct'
 import Choose from '../Choose/Choose';
+import Count from '../Count/Count';
 
 
 
@@ -49,7 +50,7 @@ const Home = () => {
 
                 }
             </div>
-
+             <Count></Count>
             <Choose></Choose>
         </div>
     );
