@@ -8,6 +8,7 @@ const SingleProduct = ({ manue }) => {
     const {user} = useContext(Contex)
 
 
+
     const { catagoris, picture, title, descreption, price, _id } = manue
 
 

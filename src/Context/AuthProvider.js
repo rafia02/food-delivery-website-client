@@ -9,57 +9,62 @@ const auth = getAuth(app)
 
 
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
+  const [loading, setLoading] = useState(true)
 
-  useEffect((id="Seafood")=>{
+  useEffect((id = "Seafood") => {
     fetch(`http://localhost:5000/itemsProducts/${id}`)
-    .then(res => res.json())
-    .then(data => setItemsManue(data))
+      .then(res => res.json())
+      .then(data => setItemsManue(data))
 
-  },[])
-  
-    const [itemsManue, setItemsManue ] = useState([])
-    const [user, setUser] = useState([])
+  }, [])
 
-
-
-   const userCreate = (email, password) =>{
-        return createUserWithEmailAndPassword(auth, email, password)
-   }
-   const userSingIn = (email, password) =>{
-        return signInWithEmailAndPassword(auth, email, password)
-   }
-   const userGoogleSingIn = (provider) => {
-         return signInWithPopup(auth, provider)
-   }
-   const userSingOut = () => {
-         return signOut(auth)
-   }
-    
-  const unSubcribe= onAuthStateChanged(auth, (carrentUser) => {
-       if(carrentUser){
-        setUser(carrentUser)
-       }
-
-       return () => unSubcribe()
-   })
+  const [itemsManue, setItemsManue] = useState([])
+  const [user, setUser] = useState([])
 
 
 
+  const userCreate = (email, password) => {
+    setLoading(true)
+    return createUserWithEmailAndPassword(auth, email, password)
+  }
+  const userSingIn = (email, password) => {
+    setLoading(true)
+    return signInWithEmailAndPassword(auth, email, password)
+  }
+  const userGoogleSingIn = (provider) => {
+    setLoading(true)
+    return signInWithPopup(auth, provider)
+  }
+  const userSingOut = () => {
+    return signOut(auth)
+  }
+
+  const unSubcribe = onAuthStateChanged(auth, (carrentUser) => {
+    if (carrentUser) {
+      setUser(carrentUser)
+      setLoading(false)
+    }
+
+    return () => unSubcribe()
+  })
 
 
 
 
 
 
-    const authInfo ={itemsManue, setItemsManue, userCreate, userSingIn, userSingOut, userGoogleSingIn,user }
-    return (
-        <div>
-          <Contex.Provider value={authInfo}>
-            {children}
-          </Contex.Provider>
-        </div>
-    );
+
+
+
+  const authInfo = { itemsManue,loading, setLoading, setItemsManue, userCreate, userSingIn, userSingOut, userGoogleSingIn, user }
+  return (
+    <div>
+      <Contex.Provider value={authInfo}>
+        {children}
+      </Contex.Provider>
+    </div>
+  );
 };
 
 export default AuthProvider;
