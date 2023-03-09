@@ -36,9 +36,9 @@ const Home = () => {
                 </div>
 
 
-                <div className=' w-full md:w-1/4 mt-10 md:mt-0 bg-rose-100'>
+                <div className=' w-full md:w-1/4 mt-10 md:mt-0 '>
 
-                    <div className=' bg-rose-100 '>
+                    <div className='  '>
                         <div>
                             <Lottie animationData={delivery} loop={true} />;
                         </div>
@@ -46,7 +46,7 @@ const Home = () => {
                         
                             <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
                             <Button text={"Continue Shopping"}></Button>
-                            <DeliveryCart></DeliveryCart>
+                            
                         </div>
                     </div>
 

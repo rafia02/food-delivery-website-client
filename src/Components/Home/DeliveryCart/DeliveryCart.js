@@ -43,20 +43,25 @@ const DeliveryCart = () => {
     return (
         <div>
 
-            {/* <div className='pb-10 px-5'>
+            {
+                carts ? <div>
+                    {
+                        carts.map(crt => <Cart
+                            key={crt._id}
+                            crt={crt}
+                        ></Cart>)
+                    }
+                </div> :
+                    <div className='pb-10 px-5'>
 
-                <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
-                <Button text={"Continue Shopping"}></Button>
-                
-            </div> */}
-            <div>
-                {
-                    carts.map(crt => <Cart
-                        key={crt._id}
-                        crt={crt}
-                    ></Cart>)
-                }
-            </div>
+                        <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
+                        <Button text={"Continue Shopping"}></Button>
+
+                    </div>
+
+            }
+
+
         </div>
     );
 };
