@@ -65,8 +65,9 @@ const Home = () => {
 
                 }
             </div>
-             <Count></Count>
+             
             <Choose></Choose>
+            <Count></Count>
         </div>
     );
 };
