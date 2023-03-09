@@ -43,6 +43,7 @@ const Home = () => {
                             <Lottie animationData={delivery} loop={true} />;
                         </div>
                         <div className='pb-10 px-5'>
+                        
                             <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
                             <Button text={"Continue Shopping"}></Button>
                             <DeliveryCart></DeliveryCart>
