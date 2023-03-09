@@ -7,7 +7,7 @@ import Button from '../../Share/Button/Button'
 
 const DeliveryCart = () => {
     const { user, loading } = useContext(Contex)
-    console.log(user)
+
 
 
 
@@ -33,7 +33,7 @@ const DeliveryCart = () => {
         }
     })
 
-    console.log(carts)
+
 
     if (loading) {
         return <Spinner></Spinner>
@@ -41,17 +41,23 @@ const DeliveryCart = () => {
 
 
     return (
-        <div>
+
+
+
+        <div className="">
+            <h1 className="text-3xl font-bold mt-2 text-center">Your Cart Product</h1>
 
             {
-                carts ? <div>
-                    {
-                        carts.map(crt => <Cart
-                            key={crt._id}
-                            crt={crt}
-                        ></Cart>)
-                    }
-                </div> :
+                carts ?
+                    <div>
+                        {
+                            carts.map(crt => <Cart
+                                key={crt._id}
+                                crt={crt}
+                            ></Cart>)
+                        }
+                    </div>
+                    :
                     <div className='pb-10 px-5'>
 
                         <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
@@ -62,7 +68,14 @@ const DeliveryCart = () => {
             }
 
 
+
+
+
+
         </div>
+
+
+
     );
 };
 
