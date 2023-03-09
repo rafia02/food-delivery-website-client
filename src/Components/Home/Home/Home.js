@@ -13,6 +13,7 @@ import Count from '../Count/Count';
 
 import Button from '../../Share/Button/Button';
 import DeliveryCart from '../DeliveryCart/DeliveryCart';
+import CheckOutPage from '../../CheckOutPage/CheckOutPage';
 
 
 
@@ -69,6 +70,7 @@ const Home = () => {
              
             <Choose></Choose>
             <Count></Count>
+            <CheckOutPage></CheckOutPage>
         </div>
     );
 };
