@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import toast from 'react-hot-toast';
 import { AiOutlinePlus, AiOutlineMinus, AiFillDelete } from "react-icons/ai";
 import { useQuery } from '@tanstack/react-query';
 
 const Cart = ({ crt }) => {
+    const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
     const { picture, title, price, _id, quantity } = crt
 
-    const { data: carts = [], isLoading,  refetch } = useQuery({
-        queryKey: [],
-        queryFn: async () => {
-            const res = await fetch('http://localhost:5000/cart')
-            const data = res.json()
-            return data
-            refetch()
-        }
-    })
+    // const { data: carts = [], isLoading,  refetch } = useQuery({
+    //     queryKey: [],
+    //     queryFn: async () => {
+    //         const res = await fetch('http://localhost:5000/cart')
+    //         const data = res.json()
+    //         return data
+    //         refetch()
+    //     }
+    // })
 
     const handlePlus=(id)=>{
         console.log(id)
@@ -34,7 +35,7 @@ const Cart = ({ crt }) => {
             if(data.modifiedCount > 0){
                 
                 toast.success('Modified successful')
-                refetch()
+                forceUpdate();
             }
             
         })
@@ -53,7 +54,7 @@ const Cart = ({ crt }) => {
         .then(data => {
             console.log(data)
             if(data.deletedCount > 0){
-                refetch()
+                forceUpdate();
             }
             
             

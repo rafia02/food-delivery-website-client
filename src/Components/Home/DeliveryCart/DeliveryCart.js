@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext,useReducer, useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Contex } from '../../../Context/AuthProvider';
 import Spinner from '../../Share/Spinner/Spinner';
@@ -6,39 +6,41 @@ import Cart from './Cart';
 import Button from '../../Share/Button/Button'
 
 const DeliveryCart = () => {
-    // const [carts, setCarts] = useState()
+        const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
+    const [carts, setCarts] = useState()
 
     const { user, loading } = useContext(Contex)
 
 
 
 
-    // useEffect(()=>{
-    //     fetch(`http://localhost:5000/showcarts?email=${user?.email}`)
-    //     .then(res=>res.json())
-    //     .then(data =>{
-    //         console.log(data)
-    //         setCarts(data)
-    //     })
-    // },[user?.email])
+    useEffect(()=>{
+        fetch(`http://localhost:5000/showcarts?email=${user?.email}`)
+        .then(res=>res.json())
+        .then(data =>{
+            forceUpdate()
+            console.log(data)
+            setCarts(data)
+        })
+    },[user?.email,reducerValue])
 
 
 
 
 
 
-    const { data: carts = [], isLoading, refetch } = useQuery({
-        queryKey: ["showcarts", user?.email],
-        queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/showcarts?email=${user?.email}`)
-            const data = res.json()
-            return data
-            refetch()
+    // const { data: carts = [], isLoading, refetch } = useQuery({
+    //     queryKey: ["showcarts", user?.email],
+    //     queryFn: async () => {
+    //         const res = await fetch(`http://localhost:5000/showcarts?email=${user?.email}`)
+    //         const data = res.json()
+    //         return data
+    //         refetch()
             
             
             
-        }
-    })
+    //     }
+    // })
 
 
 
