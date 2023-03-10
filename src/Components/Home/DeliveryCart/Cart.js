@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const Cart = ({ crt }) => {
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
-    const { picture, title, price, _id, quantity } = crt
+    const { picture, title, price, _id, quantity , total} = crt
 
     // const { data: carts = [], isLoading,  refetch } = useQuery({
     //     queryKey: [],
@@ -21,26 +21,63 @@ const Cart = ({ crt }) => {
         console.log(id)
         const updateQnt = quantity + 1
         console.log(updateQnt)
+        console.log(updateQnt)
+        const updatePrice = Math.floor(total) + Math.floor(price)
 
         fetch(`http://localhost:5000/quantityUpdate/${id}`,{
             method: 'PATCH',
             headers:{
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({"quantity": updateQnt})
+            body: JSON.stringify({"quantity": updateQnt, "total": updatePrice})
         })
         .then(res => res.json())
         .then(data => {
             console.log(data)
             if(data.modifiedCount > 0){
                 
-                toast.success('Modified successful')
                 forceUpdate();
             }
             
         })
         .catch(e => console.error(e))
     }
+
+
+
+    const handleMainus=(id)=>{
+        console.log(id)
+
+        const updateQnt = quantity - 1
+        const updatePrice = Math.floor(total) - Math.floor(price) 
+
+        fetch(`http://localhost:5000/quantityUpdate/${id}`,{
+            method: 'PATCH',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({"quantity": updateQnt, "total": updatePrice})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount > 0){
+                
+                forceUpdate();
+            }
+            
+        })
+        .catch(e => console.error(e))
+    }
+    
+
+
+
+
+
+
+
+
 
 
 
@@ -82,11 +119,12 @@ const Cart = ({ crt }) => {
                         </div>
                         <span className=' px-3  border font-bold '>{quantity}</span>
 
-                        <div className='border p-1 hover:bg-rose-500 hover:text-white duration-1000'>
+
+                        <div  onClick={()=>handleMainus(_id)} className='border p-1 hover:bg-rose-500 hover:text-white duration-1000'>
                             <AiOutlineMinus className=' font-extrabold'></AiOutlineMinus>
                         </div>
                     </div>
-                    <p className='font-semibold my-2'>Total Price: {price}$</p>
+                    <p className='font-semibold my-2'>Total Price: {total}$</p>
                 </div>
 
                 <div onClick={()=>handleDelete(_id)} className='hover:bg-rose-500 hover:text-white p-1 rounded-md duration-1000'>

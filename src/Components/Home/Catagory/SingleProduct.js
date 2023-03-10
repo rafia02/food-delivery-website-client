@@ -20,13 +20,12 @@ const SingleProduct = ({ manue }) => {
             catagoris,
             picture,
             title,
+            total: price,
             productId: id,
             descreption,
             price,
             fevourite: false,
-            quantity: 1 
-
-
+            quantity: 1,
         }
 
 
