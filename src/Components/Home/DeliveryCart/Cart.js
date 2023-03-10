@@ -1,16 +1,67 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { AiOutlinePlus, AiOutlineMinus, AiFillDelete } from "react-icons/ai";
+import { useQuery } from '@tanstack/react-query';
 
 const Cart = ({ crt }) => {
     const { picture, title, price, _id, quantity } = crt
 
-
+    const { data: carts = [], isLoading,  refetch } = useQuery({
+        queryKey: [],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/cart')
+            const data = res.json()
+            return data
+            refetch()
+        }
+    })
 
     const handlePlus=(id)=>{
         console.log(id)
-        const newQuantity = quantity + 1
-        console.log(newQuantity)
+        const updateQnt = quantity + 1
+        console.log(updateQnt)
+
+        fetch(`http://localhost:5000/quantityUpdate/${id}`,{
+            method: 'PATCH',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({"quantity": updateQnt})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount > 0){
+                
+                toast.success('Modified successful')
+                refetch()
+            }
+            
+        })
+        .catch(e => console.error(e))
     }
+
+
+
+    const handleDelete =(id)=>{
+        console.log(id)
+
+        fetch(`http://localhost:5000/delete/${id}`,{
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.deletedCount > 0){
+                refetch()
+            }
+            
+            
+        })
+        .catch(e => console.error(e))
+    }
+
+
 
 
 
@@ -37,7 +88,7 @@ const Cart = ({ crt }) => {
                     <p className='font-semibold my-2'>Total Price: {price}$</p>
                 </div>
 
-                <div className='hover:bg-rose-500 hover:text-white p-1 rounded-md duration-1000'>
+                <div onClick={()=>handleDelete(_id)} className='hover:bg-rose-500 hover:text-white p-1 rounded-md duration-1000'>
                     <AiFillDelete className='text-2xl'></AiFillDelete>
                 </div>
             </div>

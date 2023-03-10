@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link,  Outlet } from 'react-router-dom';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 
 const AllFoodLayout = () => {
 

@@ -1,11 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { Contex } from '../../../Context/AuthProvider';
 import Spinner from '../../Share/Spinner/Spinner';
 import Cart from './Cart';
 import Button from '../../Share/Button/Button'
 
 const DeliveryCart = () => {
+    // const [carts, setCarts] = useState()
+
     const { user, loading } = useContext(Contex)
 
 
@@ -16,6 +18,7 @@ const DeliveryCart = () => {
     //     .then(res=>res.json())
     //     .then(data =>{
     //         console.log(data)
+    //         setCarts(data)
     //     })
     // },[user?.email])
 
@@ -30,6 +33,10 @@ const DeliveryCart = () => {
             const res = await fetch(`http://localhost:5000/showcarts?email=${user?.email}`)
             const data = res.json()
             return data
+            refetch()
+            
+            
+            
         }
     })
 
