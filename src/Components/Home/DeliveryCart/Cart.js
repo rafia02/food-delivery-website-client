@@ -48,8 +48,8 @@ const Cart = ({ crt }) => {
     const handleMainus=(id)=>{
         console.log(id)
 
-        const updateQnt = quantity - 1
-        const updatePrice = Math.floor(total) - Math.floor(price) 
+        const updateQnt = Math.abs(quantity - 1)
+        const updatePrice = Math.abs(Math.floor(total) - Math.floor(price)) 
 
         fetch(`http://localhost:5000/quantityUpdate/${id}`,{
             method: 'PATCH',
