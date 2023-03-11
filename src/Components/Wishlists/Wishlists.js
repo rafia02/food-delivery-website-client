@@ -25,11 +25,13 @@ const Wishlists = () => {
 
     return (
         <div>
-            <h1>Wishlists products</h1> 
+            <h1>Wishlists products </h1> 
 
             {
                 wishlists.map((lists)=> <WishlistSingle
                 key={lists._id}
+                lists={lists}
+                refetch={refetch}
                 ></WishlistSingle> )
             }
         </div>
