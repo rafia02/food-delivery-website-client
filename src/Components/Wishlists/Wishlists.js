@@ -18,7 +18,7 @@ const Wishlists = () => {
     })
 
     console.log(wishlists)
-    if(loading){
+    if( isLoading ){
         return <Spinner></Spinner>
     }
    
