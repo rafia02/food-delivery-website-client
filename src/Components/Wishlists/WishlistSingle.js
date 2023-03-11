@@ -6,8 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const WishlistSingle = ({ lists,refetch }) => {
     
-    const { picture, title, price, _id } = lists;
-
+    const { picture, title, price, _id, productId } = lists;
 
 
 

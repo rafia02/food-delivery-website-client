@@ -7,7 +7,7 @@ import { Contex } from '../../../Context/AuthProvider';
 
 const SingleProduct = ({ manue }) => {
     const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
-    const {user} = useContext(Contex)
+    const {user, handleAddToCart, handleWishLists} = useContext(Contex)
    
 
 
@@ -16,78 +16,7 @@ const SingleProduct = ({ manue }) => {
 
 
     
-    const handleWishLists = () =>{
-
-        const wishListsProduct ={
-            email: user.email,
-            catagoris,
-            picture,
-            title,
-            productId: _id,
-            descreption,
-            price,
-            fevourite: false,
-            quantity: 1 
-
-        }
-       fetch('http://localhost:5000/wishlistsProducts', {
-        method:"POST",
-        headers:{
-            "content-type":"application/json"
-        },
-        body: JSON.stringify(wishListsProduct)
-       })
-       .then((res)=> res.json())
-       .then((data) => {
-        console.log(data)
-        toast.success("Success your wishlists products ")
-       })
-       .catch((err)=> {
-        console.log(err)
-        toast.error("Sorry, Filed Requst Wishlists...!")
-       })
-
-        
-    }
-
-
-
-
-
-    const handleAddToCart =(id)=>{
-
-
-        const cartProduct ={
-            email: user.email,
-            catagoris,
-            picture,
-            title,
-            total: price,
-            productId: id,
-            descreption,
-            price,
-            fevourite: false,
-            quantity: 1,
-        }
-
-
-        fetch(`http://localhost:5000/allcart`,{
-            method: 'POST',
-            headers:{
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(cartProduct)
-        })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-            forceUpdate();
-        })
-
-    }
-
-
-
+    
 
 
 
@@ -100,7 +29,7 @@ const SingleProduct = ({ manue }) => {
                        
 
                         <BsFillHeartFill className="text-2xl  duration-500 opacity-70 hover:opacity-100 hover:scale-105 skew-y-3 translate-x-4  "
-                        onClick={handleWishLists}
+                        onClick={()=>handleWishLists(catagoris, picture, title, descreption, price, _id)}
                        
                         ></BsFillHeartFill>
                     </div>
@@ -124,7 +53,7 @@ const SingleProduct = ({ manue }) => {
                     <BsStarHalf></BsStarHalf>
                 </div>
 
-                <button onClick={()=>handleAddToCart(_id)} className='flex justify-center p-1 rounded items-center mt-2 bg-rose-400 text-white font-bold '>
+                <button onClick={()=>handleAddToCart(catagoris, picture, title, descreption, price, _id, _id)} className='flex justify-center p-1 rounded items-center mt-2 bg-rose-400 text-white font-bold '>
                 <BsCartFill className='mr-2'></BsCartFill>
                      Add to cart
                 </button>

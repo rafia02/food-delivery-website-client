@@ -14,7 +14,12 @@ const AuthProvider = ({ children }) => {
   const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
   const [loading, setLoading] = useState(true)
   const [notifiaction, setNotifiaction] = useState("0")
+  const [itemsManue, setItemsManue] = useState([])
+  const [user, setUser] = useState([])
 
+
+
+  
   useEffect((id = "Seafood") => {
     fetch(`http://localhost:5000/itemsProducts/${id}`)
       .then(res => res.json())
@@ -22,8 +27,7 @@ const AuthProvider = ({ children }) => {
 
   }, [])
 
-  const [itemsManue, setItemsManue] = useState([])
-  const [user, setUser] = useState([])
+
 
 
 

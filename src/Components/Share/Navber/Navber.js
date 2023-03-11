@@ -10,7 +10,7 @@ const Navber = () => {
     const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
     const [navbar, setNavbar] = useState(false);
     const { userSingOut, user, notifiaction, setNotifiaction } = useContext(Contex)
-    console.log(notifiaction)
+
     let notify = 0
 
     const data = FetchCart()
@@ -120,11 +120,11 @@ const Navber = () => {
                                 <li className="text-gray-600 font-bold hover:text-rose-500">
                                     <Link className='flex justify-center items-center  indicator' to="/cart">
                                         Cart
-                                        <div class="relative inline-flex items-center p-1 text-center    ">
+                                        <div className="relative inline-flex items-center p-1 text-center    ">
                                             <GiShoppingCart className='text-2xl font-extrabold '></GiShoppingCart>
 
-                                            <span class="sr-only">Notifications</span>
-                                            <div class="absolute inline-flex items-center hover:bg-black hover:opacity-60 text-white duration-500 justify-center w-6 h-6 text-xs font-bold  bg-rose-400 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">{notifiaction}</div>
+                                            <span className="sr-only">Notifications</span>
+                                            <div className="absolute inline-flex items-center hover:bg-black hover:opacity-60 text-white duration-500 justify-center w-6 h-6 text-xs font-bold  bg-rose-400 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">{notifiaction}</div>
                                         </div>
                                     </Link>
                                 </li>

@@ -20,9 +20,9 @@ const Wishlists = () => {
     })
 
     console.log(wishlists)
-    if (isLoading) {
-        return <Spinner></Spinner>
-    }
+    // if (isLoading) {
+    //     return <Spinner></Spinner>
+    // }
 
 
     return (
