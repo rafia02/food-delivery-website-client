@@ -11,6 +11,7 @@ const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
+  const [notifiaction, setNotifiaction] = useState("0")
 
   useEffect((id = "Seafood") => {
     fetch(`http://localhost:5000/itemsProducts/${id}`)
@@ -57,7 +58,7 @@ const AuthProvider = ({ children }) => {
 
 
 
-  const authInfo = { itemsManue,loading, setLoading, setItemsManue, userCreate, userSingIn, userSingOut, userGoogleSingIn, user }
+  const authInfo = { itemsManue,loading, setNotifiaction, notifiaction, setLoading, setItemsManue, userCreate, userSingIn, userSingOut, userGoogleSingIn, user }
   return (
     <div>
       <Contex.Provider value={authInfo}>

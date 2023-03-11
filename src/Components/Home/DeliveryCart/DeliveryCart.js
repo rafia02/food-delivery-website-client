@@ -9,8 +9,11 @@ import { Link } from 'react-router-dom';
 const DeliveryCart = () => {
     const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
     const [carts, setCarts] = useState()
-    const { user, loading } = useContext(Contex)
-    var subTotal = 0
+    const { user, loading, setNotifiaction } = useContext(Contex)
+    let subTotal = 0
+    let notify = 0
+
+
 
 
 
@@ -24,22 +27,6 @@ const DeliveryCart = () => {
     }, [user?.email, reducerValue])
 
 
-
-
-
-
-    // const { data: carts = [], isLoading, refetch } = useQuery({
-    //     queryKey: ["showcarts", user?.email],
-    //     queryFn: async () => {
-    //         const res = await fetch(`http://localhost:5000/showcarts?email=${user?.email}`)
-    //         const data = res.json()
-    //         return data
-    //         refetch()
-
-
-
-    //     }
-    // })
 
 
 
@@ -59,7 +46,12 @@ const DeliveryCart = () => {
                 carts ?
                     <div>
                         {
-                            carts.map((crt) =>{ subTotal = Math.floor(subTotal) + Math.floor(crt.total )
+                            carts.map((crt) =>{ 
+                                subTotal = Math.floor(subTotal) + Math.floor(crt.total )
+                                notify = Math.floor(notify) + Math.floor(crt.quantity)
+                                
+                                setNotifiaction(notify)
+                            
                                 return(<Cart
                                 key={crt._id}
                                 crt={crt}
@@ -84,9 +76,9 @@ const DeliveryCart = () => {
             <Link to="/foods" className="w-2/5  md:w-2/6">
                 <Button text="Continue Shopping"></Button>
             </Link>
-            <div className="w-2/5 md:w-2/6">
+            <Link to="/cart" className="w-2/5 md:w-2/6">
                 <Button text="Update Cart"></Button>
-            </div>
+            </Link>
             </div>
 
 

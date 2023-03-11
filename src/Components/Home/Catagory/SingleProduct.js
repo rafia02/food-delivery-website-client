@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useReducer, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { BsCartFill, BsFillHeartFill, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { Contex } from '../../../Context/AuthProvider';
@@ -6,6 +6,7 @@ import { Contex } from '../../../Context/AuthProvider';
 
 
 const SingleProduct = ({ manue }) => {
+    const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
     const {user} = useContext(Contex)
    
 
@@ -80,6 +81,7 @@ const SingleProduct = ({ manue }) => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
+            forceUpdate();
         })
 
     }

@@ -3,24 +3,26 @@ import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { Contex } from '../../../Context/AuthProvider';
 import logo from '../../../images/hangry3.png'
+import { GiShoppingCart } from "react-icons/gi";
 
 const Navber = () => {
     const [navbar, setNavbar] = useState(false);
-    const {userSingOut, user}= useContext(Contex)
-    
+    const { userSingOut, user, notifiaction } = useContext(Contex)
+    console.log(notifiaction)
 
 
 
-    const handleSingOut =() => {
+
+    const handleSingOut = () => {
         userSingOut()
-        .then(res => {
-            console.log(res)
-            toast.success("Success SingOut...!")
-        })
-        .catch((err) => {
-            console.log(err)
-            toast.error("Sorry, Filed SingOut...!")
-        })
+            .then(res => {
+                console.log(res)
+                toast.success("Success SingOut...!")
+            })
+            .catch((err) => {
+                console.log(err)
+                toast.error("Sorry, Filed SingOut...!")
+            })
     }
 
 
@@ -33,7 +35,7 @@ const Navber = () => {
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <div className='w-36 h-12' href="javascript:void(0)">
-                            <img  className='w-full h-full' src={logo} alt="" />
+                            <img className='w-full h-full' src={logo} alt="" />
                         </div>
                         <div className="md:hidden">
                             <button
@@ -75,34 +77,52 @@ const Navber = () => {
                 </div>
                 <div>
                     <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                            navbar ? "block" : "hidden"
-                        }`}
+                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                            }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-gray-600 font-bold hover:text-red-500">
+                            <li className="text-gray-600 font-bold hover:text-rose-500">
                                 <Link to="/">Home</Link>
                             </li>
-                            <li className="text-gray-600 font-bold hover:text-red-500">
+                            <li className="text-gray-600 font-bold hover:text-rose-500">
                                 <Link to="/foods">Foods</Link>
                             </li>
-                            <li className="text-gray-600 font-bold hover:text-red-500">
-                                <Link to="/cart"> Cart </Link>
+                            {/* <li className="text-gray-600 font-bold hover:text-rose-500">
+                                <Link className='flex  indicator' to="/cart">
+                                    Cart
+                                    <span className="indicator-item badge badge-secondary">99+</span>
+                                    <GiShoppingCart className='text-2xl font-bold '></GiShoppingCart>
+                                </Link>
+                            </li> */}
+
+                            <li className="text-gray-600 font-bold hover:text-rose-500">
+                                <Link className='flex justify-center items-center  indicator' to="/cart">
+                                    Cart
+                                    <div  class="relative inline-flex items-center p-1 text-center    ">
+                                        <GiShoppingCart className='text-2xl font-bold '></GiShoppingCart>
+
+                                        <span class="sr-only">Notifications</span>
+                                        <div class="absolute inline-flex items-center hover:bg-gray-600 text-white duration-500 justify-center w-6 h-6 text-xs font-bold text-white bg-rose-400 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">{notifiaction}</div>
+                                    </div>
+                                </Link>
                             </li>
 
-                            <li className="text-gray-600 font-bold hover:text-red-500">
+
+                          
+
+                            <li className="text-gray-600 font-bold hover:text-rose-500">
                                 <Link to="/wishlists"> Wishlist </Link>
                             </li>
 
 
 
-                          {
-                            user?.email ?  <li className="text-gray-600 font-bold hover:text-red-500">
-                            <Link to="/" onClick={handleSingOut} >SingOut</Link>
-                           </li> : <li className="text-gray-600 font-bold hover:text-red-500">
-                                <Link to="/login">Login</Link>
-                            </li>
-                          }
+                            {
+                                user?.email ? <li className="text-gray-600 font-bold hover:text-rose-500">
+                                    <Link to="/" onClick={handleSingOut} >SingOut</Link>
+                                </li> : <li className="text-gray-600 font-bold hover:text-rose-500">
+                                    <Link to="/login">Login</Link>
+                                </li>
+                            }
 
 
 
@@ -110,7 +130,7 @@ const Navber = () => {
 
 
 
-        
+
                         </ul>
                     </div>
                 </div>
