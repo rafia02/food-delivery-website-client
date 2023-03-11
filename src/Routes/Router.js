@@ -8,6 +8,7 @@ import DeliveryCart from "../Components/Home/DeliveryCart/DeliveryCart";
 import Home from "../Components/Home/Home/Home";
 import Login from "../Components/Share/User/Login";
 import Register from "../Components/Share/User/Register";
+import CheckOut from "../Components/Wishlists/CheckOut";
 import Wishlists from "../Components/Wishlists/Wishlists";
 import Main from "../Layout/Main";
 
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
         {
             path:'/wishlists',
             element: <Wishlists></Wishlists>
+        },
+        {
+            path: "/wishlistsCheckOut",
+            element: <CheckOut></CheckOut>
         },
         {
             path:"/foods",
