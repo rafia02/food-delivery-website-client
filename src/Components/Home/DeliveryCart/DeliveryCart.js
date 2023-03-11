@@ -29,29 +29,59 @@ const DeliveryCart = () => {
 
 
         <div className="">
-            <h1 className="text-3xl font-bold mt-2 text-center">Your Cart Product</h1>
+
 
             {
-                carts ?
+                carts.length > 0 ?
                     <div>
-                        {
-                            carts.map((crt) =>{ 
-                                subTotal = Math.floor(subTotal) + Math.floor(crt.total )
-                                notify = Math.floor(notify) + Math.floor(crt.quantity)
-                                
-                                setNotifiaction(notify)
-                            
-                                return(<Cart
-                                key={crt._id}
-                                crt={crt}
-                            ></Cart>)})
-                        }
-                    </div>
-                    :
-                    <div className='pb-10 px-5'>
+                        <h1 className="text-3xl font-bold mt-2 text-center">Your Cart Product</h1>
+                        <div>
+                            {
+                                carts.map((crt) => {
+                                    subTotal = Math.floor(subTotal) + Math.floor(crt.total)
+                                    notify = Math.floor(notify) + Math.floor(crt.quantity)
 
-                        <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
-                        <Button text={"Continue Shopping"}></Button>
+                                    setNotifiaction(notify)
+
+                                    return (<Cart
+                                        key={crt._id}
+                                        crt={crt}
+                                    ></Cart>)
+                                })
+                            }
+                        </div>
+                        <div className='flex justify-between md:w-3/4 mx-auto'>
+                            <Link to="/foods" className="w-2/5  md:w-2/6">
+                                <Button text="Continue Shopping"></Button>
+                            </Link>
+                            <Link to="/cart" className="w-2/5 md:w-2/6">
+                                <Button text="Update Cart"></Button>
+                            </Link>
+                        </div>
+
+
+
+                        <div className="my-20  text-center p-8 shadow-lg bg-rose-50 md:w-3/4 mx-auto">
+                            <h1 className="text-2xl opacity-80  font-bold">Order Summery</h1>
+                            <h1 className=" opacity-80 font-bold my-4">Subtotal : {subTotal}$</h1>
+                            <div className="w-3/6 mx-auto md:w-2/6">
+                                <Button text="Process To Checkout"></Button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    :
+
+
+                    <div className='pb-10 px-5 shadow-md p-10 my-5 w-3/4 md:w-1/2 mx-auto'>
+
+                        <h1 className="text-xl mb-5 font-bold text-center  ">Your cart is curently unavailable</h1>
+                        <div className='w-2/3  mx-auto'>
+                            <Link className='w-full' to="/foods"><Button text={"Continue Shopping"}></Button></Link>
+                        </div>
 
                     </div>
 
@@ -61,7 +91,11 @@ const DeliveryCart = () => {
 
 
 
-            <div className='flex justify-between md:w-3/4 mx-auto'>
+
+
+
+
+            {/* <div className='flex justify-between md:w-3/4 mx-auto'>
             <Link to="/foods" className="w-2/5  md:w-2/6">
                 <Button text="Continue Shopping"></Button>
             </Link>
@@ -79,7 +113,7 @@ const DeliveryCart = () => {
                     <Button text="Process To Checkout"></Button>
                 </div>
 
-            </div>
+            </div> */}
 
 
 
