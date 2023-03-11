@@ -5,26 +5,15 @@ import Spinner from '../../Share/Spinner/Spinner';
 import Cart from './Cart';
 import Button from '../../Share/Button/Button'
 import { Link } from 'react-router-dom';
+import FetchCart from '../../Share/FetchCart/FetchCart';
 
 const DeliveryCart = () => {
     const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
-    const [carts, setCarts] = useState()
     const { user, loading, setNotifiaction } = useContext(Contex)
+    const carts = FetchCart()
     let subTotal = 0
     let notify = 0
 
-
-
-
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/showcarts?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                forceUpdate()
-                setCarts(data)
-            })
-    }, [user?.email, reducerValue])
 
 
 
