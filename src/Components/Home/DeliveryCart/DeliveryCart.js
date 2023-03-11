@@ -1,4 +1,4 @@
-import React, { useContext,useReducer, useState, useEffect } from 'react';
+import React, { useContext, useReducer, useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Contex } from '../../../Context/AuthProvider';
 import Spinner from '../../Share/Spinner/Spinner';
@@ -6,23 +6,21 @@ import Cart from './Cart';
 import Button from '../../Share/Button/Button'
 
 const DeliveryCart = () => {
-        const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
+    const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
     const [carts, setCarts] = useState()
-
     const { user, loading } = useContext(Contex)
 
 
 
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`http://localhost:5000/showcarts?email=${user?.email}`)
-        .then(res=>res.json())
-        .then(data =>{
-            forceUpdate()
-            console.log(data)
-            setCarts(data)
-        })
-    },[user?.email,reducerValue])
+            .then(res => res.json())
+            .then(data => {
+                forceUpdate()
+                setCarts(data)
+            })
+    }, [user?.email, reducerValue])
 
 
 
@@ -36,9 +34,9 @@ const DeliveryCart = () => {
     //         const data = res.json()
     //         return data
     //         refetch()
-            
-            
-            
+
+
+
     //     }
     // })
 
@@ -75,6 +73,23 @@ const DeliveryCart = () => {
                     </div>
 
             }
+
+
+
+
+
+            <div className="w-1/6 mx-auto">
+                <Button text="Continue Shopping"></Button>
+            </div>
+
+
+
+            <div className="">
+                <h1 className="text-2xl font-bold">Order Summery</h1>
+                <h1 className=" font-bold">Subtotal: {}</h1>
+
+            </div>
+
 
 
 
