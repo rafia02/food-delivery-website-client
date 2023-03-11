@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { BsCartFill, BsFillHeartFill, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { Contex } from '../../../Context/AuthProvider';
 
@@ -6,10 +7,50 @@ import { Contex } from '../../../Context/AuthProvider';
 
 const SingleProduct = ({ manue }) => {
     const {user} = useContext(Contex)
-
+   
 
 
     const { catagoris, picture, title, descreption, price, _id } = manue
+
+
+
+    
+    const handleWishLists = () =>{
+
+        const wishListsProduct ={
+            email: user.email,
+            catagoris,
+            picture,
+            title,
+            productId: _id,
+            descreption,
+            price,
+            fevourite: false,
+            quantity: 1 
+
+        }
+       fetch('http://localhost:5000/wishlistsProducts', {
+        method:"POST",
+        headers:{
+            "content-type":"application/json"
+        },
+        body: JSON.stringify(wishListsProduct)
+       })
+       .then((res)=> res.json())
+       .then((data) => {
+        console.log(data)
+        toast.success("Success your wishlists products ")
+       })
+       .catch((err)=> {
+        console.log(err)
+        toast.error("Sorry, Filed Requst Wishlists...!")
+       })
+
+        
+    }
+
+
+
 
 
     const handleAddToCart =(id)=>{
@@ -57,7 +98,10 @@ const SingleProduct = ({ manue }) => {
                     <div className='flex justify-center items-center '>
                        
 
-                        <BsFillHeartFill className="text-2xl  duration-500 opacity-70 hover:opacity-100 hover:scale-105 skew-y-3 translate-x-4  "></BsFillHeartFill>
+                        <BsFillHeartFill className="text-2xl  duration-500 opacity-70 hover:opacity-100 hover:scale-105 skew-y-3 translate-x-4  "
+                        onClick={handleWishLists}
+                       
+                        ></BsFillHeartFill>
                     </div>
 
                     <div>
