@@ -124,7 +124,7 @@ const Navber = () => {
                                             <GiShoppingCart className='text-2xl font-extrabold '></GiShoppingCart>
 
                                             <span class="sr-only">Notifications</span>
-                                            <div class="absolute inline-flex items-center hover:bg-gray-600 text-white duration-500 justify-center w-6 h-6 text-xs font-bold text-white bg-rose-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">{notifiaction}</div>
+                                            <div class="absolute inline-flex items-center hover:bg-black hover:opacity-60 text-white duration-500 justify-center w-6 h-6 text-xs font-bold  bg-rose-400 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">{notifiaction}</div>
                                         </div>
                                     </Link>
                                 </li>
