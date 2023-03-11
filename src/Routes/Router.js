@@ -45,16 +45,16 @@ export const router = createBrowserRouter([
             element: <Wishlists></Wishlists>
         },
         {
-            path:"/allfoodlayout",
+            path:"/foods",
             element: <AllFoodLayout></AllFoodLayout>,
             children: [
                 {
-                    path: '/allfoodlayout',
+                    path: '/foods',
                     loader:async()=> fetch('http://localhost:5000/allfood'),
                     element: <AllFoods></AllFoods>
                 },
                 {
-                    path: "/allfoodlayout/food/:title",
+                    path: "/foods/food/:title",
                     element: <CatagoryFoods></CatagoryFoods>,
                     loader: async ({params}) => {
                         return fetch(`http://localhost:5000/itemsProducts/${params.title}`)

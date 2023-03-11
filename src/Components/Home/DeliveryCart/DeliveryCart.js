@@ -4,6 +4,7 @@ import { Contex } from '../../../Context/AuthProvider';
 import Spinner from '../../Share/Spinner/Spinner';
 import Cart from './Cart';
 import Button from '../../Share/Button/Button'
+import { Link } from 'react-router-dom';
 
 const DeliveryCart = () => {
     const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
@@ -80,9 +81,9 @@ const DeliveryCart = () => {
 
 
             <div className='flex justify-between md:w-3/4 mx-auto'>
-            <div className="w-2/5  md:w-2/6">
+            <Link to="/foods" className="w-2/5  md:w-2/6">
                 <Button text="Continue Shopping"></Button>
-            </div>
+            </Link>
             <div className="w-2/5 md:w-2/6">
                 <Button text="Update Cart"></Button>
             </div>
