@@ -9,7 +9,7 @@ const DeliveryCart = () => {
     const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
     const [carts, setCarts] = useState()
     const { user, loading } = useContext(Contex)
-
+    var subTotal = 0
 
 
 
@@ -58,10 +58,11 @@ const DeliveryCart = () => {
                 carts ?
                     <div>
                         {
-                            carts.map(crt => <Cart
+                            carts.map((crt) =>{ subTotal = Math.floor(subTotal) + Math.floor(crt.total )
+                                return(<Cart
                                 key={crt._id}
                                 crt={crt}
-                            ></Cart>)
+                            ></Cart>)})
                         }
                     </div>
                     :
@@ -78,15 +79,23 @@ const DeliveryCart = () => {
 
 
 
-            <div className="w-1/6 mx-auto">
+            <div className='flex justify-between md:w-3/4 mx-auto'>
+            <div className="w-2/5  md:w-2/6">
                 <Button text="Continue Shopping"></Button>
+            </div>
+            <div className="w-2/5 md:w-2/6">
+                <Button text="Update Cart"></Button>
+            </div>
             </div>
 
 
 
-            <div className="">
-                <h1 className="text-2xl font-bold">Order Summery</h1>
-                <h1 className=" font-bold">Subtotal: {}</h1>
+            <div className="my-20  text-center p-8 shadow-lg bg-rose-50 md:w-3/4 mx-auto">
+                <h1 className="text-2xl opacity-80  font-bold">Order Summery</h1>
+                <h1 className=" opacity-80 font-bold my-4">Subtotal : {subTotal}$</h1>
+                <div className="w-3/6 mx-auto md:w-2/6">
+                    <Button text="Process To Checkout"></Button>
+                </div>
 
             </div>
 
