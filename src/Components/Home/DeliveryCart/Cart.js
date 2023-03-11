@@ -112,7 +112,7 @@ const Cart = ({ crt }) => {
             <div className='rounded p-5 w-full md:w-3/4 mx-auto border m-5'>
                 <div className='flex mb-3  items-center justify-evenly'>
                     <img className='w-40 h-32  rounded' src={picture} alt="" />
-                    <div className=''>
+                    <div className='w-56 ml-8 md:w-96'>
                         <p className=" text-xl md:text-2xl font-bold opacity-70 ">{title}</p>
                         <p className='font-semibold my-2'>${price}</p>
                         <div className=' flex  items-center'>
