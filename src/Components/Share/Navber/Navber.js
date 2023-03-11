@@ -90,6 +90,10 @@ const Navber = () => {
                                 <Link to="/cart"> Cart </Link>
                             </li>
 
+                            <li className="text-gray-600 font-bold hover:text-red-500">
+                                <Link to="/wishlists"> Wishlist </Link>
+                            </li>
+
 
 
                           {

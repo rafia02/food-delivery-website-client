@@ -8,6 +8,7 @@ import DeliveryCart from "../Components/Home/DeliveryCart/DeliveryCart";
 import Home from "../Components/Home/Home/Home";
 import Login from "../Components/Share/User/Login";
 import Register from "../Components/Share/User/Register";
+import Wishlists from "../Components/Wishlists/Wishlists";
 import Main from "../Layout/Main";
 
 export const router = createBrowserRouter([
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
             path: '/allfood',
             loader:async()=> fetch('http://localhost:5000/allfood'),
             element: <AllFoods></AllFoods>
+        },
+        {
+            path:'/wishlists',
+            element: <Wishlists></Wishlists>
         },
         {
             path:"/allfoodlayout",
