@@ -36,7 +36,7 @@ const CheckOut = () => {
 
             <div className='grid grid-cols-2'>
                 {/* Frist div  */}
-                <div className=' border border-green-400 pl-20 py-14'>
+                <div className=' pr-10  pl-20 py-14'>
 
 
                     <form>
@@ -88,40 +88,51 @@ const CheckOut = () => {
                 {/* Secound div   */}
 
 
-                <div className=' border border-red-500 '>
-                    <h1>secound</h1>
+                <div className='bg-rose-50 '>
+                    
 
 
 
                     {
-                        wishlists.map((lists) => {
-                            store = Math.floor(store) + Math.floor(lists.price)
-                            console.log(lists)
-                        })
+                        wishlists.map((lists) => <div className='grid grid-cols-1 md:grid-cols-2 mb-3 pl-10 my-16'
+                        key={lists._id}
+                        >
+                        <div>
+                               <div className='w-full flex flex-col lg:flex-row'>
+                                 <div className='w-2/6    '>
+                                     <img className='w-full h-16' src={lists.picture} alt="" />
+                                 </div>
+                                 <div className='w-full ml-2'>
+                                     <h1>{lists.title}</h1>
+                                     <h1>{lists._id}</h1>
+                                 </div>
+                               </div>
+                        </div>
+
+
+
+                        <div className='flex justify-center'>
+                           <h1> $ {lists.price}, 00 </h1>
+                        </div>
+                   </div>)
                     }
 
 
 
+                     <div className='grid grid-cols-2 pl-16 mt-8 border-t-2'>
+                        <h1>Subtotal</h1>
+                        <h2>total prize</h2>
+                     </div>
 
-                      <div className='grid grid-cols-1 md:grid-cols-2'>
-                           <div>
-                                  <div className='border w-full flex flex-col lg:flex-row'>
-                                    <div className='w-2/6 border '>
-                                        <h1>image</h1>
-                                    </div>
-                                    <div className='w-full ml-2'>
-                                        <h1>tile</h1>
-                                        <h1>id</h1>
-                                    </div>
-                                  </div>
-                           </div>
-
-
-
-                           <div className='border flex justify-center'>
-                              <h1>Prize</h1>
-                           </div>
-                      </div>
+                     <div className='grid grid-cols-2 pl-16 mt-8 border-b-2 pb-6'>
+                        <h1>Shipping</h1>
+                        <h2>total prize</h2>
+                     </div>
+                      
+                     <div className='grid grid-cols-2 pl-16 mt-8 pb-6'>
+                        <h1>Total</h1>
+                        <h2> USD $192344 </h2>
+                     </div>
 
 
                 </div>
