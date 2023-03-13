@@ -9,7 +9,7 @@ import WishlistSingle from './WishlistSingle';
 const Wishlists = () => {
     const { user, loading } = useContext(Contex)
 
-
+    
     const { data: wishlists = [], isLoading, refetch } = useQuery({
         queryKey: ["wishlists", user?.email],
         queryFn: async () => {

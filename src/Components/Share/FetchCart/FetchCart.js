@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { Contex } from '../../../Context/AuthProvider';
 
+
 const FetchCart = () => {
     const [reducerValue, forceUpdate] = useReducer(x => x + 1, 0);
     const { user } = useContext(Contex)

@@ -13,8 +13,8 @@ const DeliveryCart = () => {
     const carts = FetchCart()
     let subTotal = 0
     let notify = 0
-   
 
+    console.log(carts)
 
 
 

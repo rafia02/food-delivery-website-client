@@ -7,7 +7,7 @@ import Spinner from '../Share/Spinner/Spinner';
 
 const CheckOut = () => {
     const { user, loading } = useContext(Contex)
-
+     let store = 0
 
     const { data: wishlists = [], isLoading, refetch } = useQuery({
         queryKey: ["wishlists", user?.email],
@@ -18,21 +18,25 @@ const CheckOut = () => {
         }
     })
 
-    console.log(wishlists)
-    if (isLoading) {
+  
+    if (loading) {
         return <Spinner></Spinner>
     }
 
 
-   let store= 0
+    
 
-   console.log('total taka:', store )
+    console.log('total taka:', store)
 
 
     return (
         <div className=''>
 
-
+            { wishlists &&
+                wishlists.map((crt)=> {
+                    store = Math.floor(store) + Math.floor(crt.price)
+                })
+            }
 
             <div className='grid grid-cols-2'>
                 {/* Frist div  */}
@@ -89,50 +93,64 @@ const CheckOut = () => {
 
 
                 <div className='bg-rose-50 '>
+
+
+
+
+                    {/* { wishlists.length > 0 &&
+                        wishlists.map((lists) =>{
+                            console.log(lists)
+                            store += parseInt(lists.price)
+
+                        } )
                     
+                    } */}
 
 
 
-                    {
-                        wishlists.map((lists) => <div className='grid grid-cols-1 md:grid-cols-2 mb-3 pl-10 my-16'
-                        key={lists._id}
+{/* <div className='grid grid-cols-1 md:grid-cols-2 mb-3 pl-10 my-16'
+                            key={lists._id}
                         >
-                        <div>
-                               <div className='w-full flex flex-col lg:flex-row'>
-                                 <div className='w-2/6    '>
-                                     <img className='w-full h-16' src={lists.picture} alt="" />
-                                 </div>
-                                 <div className='w-full ml-2'>
-                                     <h1>{lists.title}</h1>
-                                     <h1>{lists._id}</h1>
-                                 </div>
-                               </div>
-                        </div>
+                            <div>
+                                <div className='w-full flex flex-col lg:flex-row'>
+                                    <div className='w-2/6    '>
+                                        <img className='w-full h-16' src={lists.picture} alt="" />
+                                    </div>
+                                    <div className='w-full ml-2'>
+                                        <h1>{lists.title}</h1>
+                                        <h1>{lists._id}</h1>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
-                        <div className='flex justify-center'>
-                           <h1> $ {lists.price}, 00 </h1>
-                        </div>
-                   </div>)
-                    }
+                            <div className='flex justify-center'>
+                                <h1> $ {lists.price}, 00 </h1>
+                            </div>
+                        </div> */}
 
 
 
-                     <div className='grid grid-cols-2 pl-16 mt-8 border-t-2'>
+
+
+
+
+
+                    <div className='grid grid-cols-2 pl-16 mt-8 border-t-2'>
                         <h1>Subtotal</h1>
                         <h2>total prize</h2>
-                     </div>
+                    </div>
 
-                     <div className='grid grid-cols-2 pl-16 mt-8 border-b-2 pb-6'>
+                    <div className='grid grid-cols-2 pl-16 mt-8 border-b-2 pb-6'>
                         <h1>Shipping</h1>
                         <h2>total prize</h2>
-                     </div>
-                      
-                     <div className='grid grid-cols-2 pl-16 mt-8 pb-6'>
+                    </div>
+
+                    <div className='grid grid-cols-2 pl-16 mt-8 pb-6'>
                         <h1>Total</h1>
                         <h2> USD $192344 </h2>
-                     </div>
+                    </div>
 
 
                 </div>
