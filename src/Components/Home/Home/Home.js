@@ -14,6 +14,7 @@ import Count from '../Count/Count';
 import Button from '../../Share/Button/Button';
 import DeliveryCart from '../DeliveryCart/DeliveryCart';
 import CheckOutPage from '../../CheckOutPage/CheckOutPage';
+import BestTeam from '../BestTeam/BestTeam';
 
 
 
@@ -70,7 +71,7 @@ const Home = () => {
              
             <Choose></Choose>
             <Count></Count>
-            <CheckOutPage></CheckOutPage>
+            <BestTeam></BestTeam>
         </div>
     );
 };
