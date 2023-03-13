@@ -8,6 +8,8 @@ import Spinner from '../Share/Spinner/Spinner';
 const CheckOut = () => {
     const { user, loading } = useContext(Contex)
      let store = 0
+     let shipping = 0
+     let grandTotal = 0
 
     const { data: wishlists = [], isLoading, refetch } = useQuery({
         queryKey: ["wishlists", user?.email],
@@ -17,6 +19,10 @@ const CheckOut = () => {
             return data;
         }
     })
+
+
+
+    console.log(wishlists)
 
   
     if (loading) {
@@ -35,6 +41,8 @@ const CheckOut = () => {
             { wishlists &&
                 wishlists.map((crt)=> {
                     store = Math.floor(store) + Math.floor(crt.price)
+                    shipping = Math.floor(Math.floor(store) * 10/100)
+                    grandTotal = Math.floor(store) + Math.floor(shipping)
                 })
             }
 
@@ -138,18 +146,18 @@ const CheckOut = () => {
 
 
                     <div className='grid grid-cols-2 pl-16 mt-8 border-t-2'>
-                        <h1>Subtotal</h1>
-                        <h2>total prize</h2>
+                        <h1>Subtotal : </h1>
+                        <h2> ${store}.00</h2>
                     </div>
 
                     <div className='grid grid-cols-2 pl-16 mt-8 border-b-2 pb-6'>
-                        <h1>Shipping</h1>
-                        <h2>total prize</h2>
+                        <h1>Shipping :</h1>
+                        <h2>{shipping}</h2>
                     </div>
 
                     <div className='grid grid-cols-2 pl-16 mt-8 pb-6'>
-                        <h1>Total</h1>
-                        <h2> USD $192344 </h2>
+                        <h1>Grand Total :</h1>
+                        <h2> USD ${grandTotal} </h2>
                     </div>
 
 
