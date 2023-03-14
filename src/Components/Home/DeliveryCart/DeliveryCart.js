@@ -14,13 +14,16 @@ const DeliveryCart = () => {
     let subTotal = 0
     let notify = 0
 
-    console.log(carts)
+
 
 
 
     if (loading) {
         return <Spinner></Spinner>
     }
+
+
+
 
 
     return (
@@ -63,9 +66,12 @@ const DeliveryCart = () => {
                         <div className="my-20  text-center p-8 shadow-lg bg-rose-50 md:w-3/4 mx-auto">
                             <h1 className="text-2xl opacity-80  font-bold">Order Summery</h1>
                             <h1 className=" opacity-80 font-bold my-4">Subtotal : {subTotal}$</h1>
-                            <div className="w-3/6 mx-auto md:w-2/6">
-                                <Button text="Process To Checkout"></Button>
-                            </div>
+                            <Link to="/cartCheckOut">
+                                <div className="w-3/6 mx-auto md:w-2/6">
+                                    <Button text="Process To Checkout"></Button>
+                                </div>
+
+                            </Link>
 
                         </div>
 
@@ -94,25 +100,6 @@ const DeliveryCart = () => {
 
 
 
-            {/* <div className='flex justify-between md:w-3/4 mx-auto'>
-            <Link to="/foods" className="w-2/5  md:w-2/6">
-                <Button text="Continue Shopping"></Button>
-            </Link>
-            <Link to="/cart" className="w-2/5 md:w-2/6">
-                <Button text="Update Cart"></Button>
-            </Link>
-            </div>
-
-
-
-            <div className="my-20  text-center p-8 shadow-lg bg-rose-50 md:w-3/4 mx-auto">
-                <h1 className="text-2xl opacity-80  font-bold">Order Summery</h1>
-                <h1 className=" opacity-80 font-bold my-4">Subtotal : {subTotal}$</h1>
-                <div className="w-3/6 mx-auto md:w-2/6">
-                    <Button text="Process To Checkout"></Button>
-                </div>
-
-            </div> */}
 
 
 

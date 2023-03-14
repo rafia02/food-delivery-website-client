@@ -4,6 +4,7 @@ import AllFoods from "../Components/AllFoods/AllFoods";
 import CatagoryFoods from "../Components/AllFoods/FoodCatagory/CatagoryFoods";
 import ItemsProduct from "../Components/Home/Catagory/ItemsProduct";
 import Choose from "../Components/Home/Choose/Choose";
+import CartCheckOut from "../Components/Home/DeliveryCart/CartCheckOut";
 import DeliveryCart from "../Components/Home/DeliveryCart/DeliveryCart";
 import Home from "../Components/Home/Home/Home";
 import Login from "../Components/Share/User/Login";
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
         {
             path: "/wishlistsCheckOut",
             element: <CheckOut></CheckOut>
+        },
+        {
+            path: "/cartCheckOut",
+            element: <CartCheckOut></CartCheckOut>
         },
         {
             path:"/foods",

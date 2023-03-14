@@ -12,7 +12,7 @@ const Footer = () => {
 
       
 
-            <footer className="footer p-10 h-96 bg-rose-200 text-black ">
+            <footer className="footer p-10  bg-rose-200 text-black ">
 
 
                 <div>
