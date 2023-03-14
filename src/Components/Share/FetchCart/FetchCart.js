@@ -9,7 +9,7 @@ const FetchCart = () => {
     const [data, setData] = useState([])
 
         useEffect(() => {
-            fetch(`http://localhost:5000/showcarts?email=${user?.email}`)
+            fetch(`https://food-delivery-website-server-ruby.vercel.app/showcarts?email=${user?.email}`)
                 .then(res => res.json())
                 .then(data => {
                     forceUpdate()

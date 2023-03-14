@@ -21,7 +21,7 @@ const Catagory = () => {
   const { data: catagoris = [], isLoading } = useQuery({
     queryKey: ["catagoris"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/allCatagoris");
+      const res = await fetch("https://food-delivery-website-server-ruby.vercel.app/allCatagoris");
       const data = await res.json()
       return data
     }
@@ -44,7 +44,7 @@ const Catagory = () => {
 
    
 
-    fetch(`http://localhost:5000/itemsProducts/${id}`)
+    fetch(`https://food-delivery-website-server-ruby.vercel.app/itemsProducts/${id}`)
     .then(res => res.json())
     .then(data => setItemsManue(data))
 

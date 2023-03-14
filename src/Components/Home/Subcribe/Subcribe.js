@@ -12,7 +12,7 @@ const Subcribe = () => {
             email: data.email
          }
 
-         fetch("http://localhost:5000/subcribeEmail", {
+         fetch("https://food-delivery-website-server-ruby.vercel.app/subcribeEmail", {
             method: "POST",
             headers:{
                 "content-type":"application/json"

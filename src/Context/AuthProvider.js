@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
 
   
   useEffect((id = "Seafood") => {
-    fetch(`http://localhost:5000/itemsProducts/${id}`)
+    fetch(`https://food-delivery-website-server-ruby.vercel.app/itemsProducts/${id}`)
       .then(res => res.json())
       .then(data => setItemsManue(data))
 
@@ -75,7 +75,7 @@ const AuthProvider = ({ children }) => {
         quantity: 1 
 
     }
-   fetch('http://localhost:5000/wishlistsProducts', {
+   fetch('https://food-delivery-website-server-ruby.vercel.app/wishlistsProducts', {
     method:"POST",
     headers:{
         "content-type":"application/json"
@@ -118,7 +118,7 @@ const handleAddToCart = (catagoris, picture, title, descreption, price, _id, id)
   }
 
 
-  fetch(`http://localhost:5000/allcart`, {
+  fetch(`https://food-delivery-website-server-ruby.vercel.app/allcart`, {
       method: 'POST',
       headers: {
           "content-type": "application/json"

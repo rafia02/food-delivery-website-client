@@ -18,7 +18,7 @@ const CheckOut = () => {
     const { data: wishlists = [], isLoading, refetch } = useQuery({
         queryKey: ["wishlists", user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/wishlistsProducts?email=${user?.email}`);
+            const res = await fetch(`https://food-delivery-website-server-ruby.vercel.app/wishlistsProducts?email=${user?.email}`);
             const data = res.json()
             return data;
         }
