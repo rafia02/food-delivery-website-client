@@ -11,7 +11,7 @@ const Cart = ({ crt }) => {
     // const { data: carts = [], isLoading,  refetch } = useQuery({
     //     queryKey: [],
     //     queryFn: async () => {
-    //         const res = await fetch('http://localhost:5000/cart')
+    //         const res = await fetch('https://food-delivery-website-server-ruby.vercel.app/cart')
     //         const data = res.json()
     //         return data
     //         refetch()
@@ -25,7 +25,7 @@ const Cart = ({ crt }) => {
         console.log(updateQnt)
         const updatePrice = Math.floor(total) + Math.floor(price)
 
-        fetch(`http://localhost:5000/quantityUpdate/${id}`, {
+        fetch(`https://food-delivery-website-server-ruby.vercel.app/quantityUpdate/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const Cart = ({ crt }) => {
         const updateQnt = Math.abs(quantity - 1)
         const updatePrice = Math.abs(Math.floor(total) - Math.floor(price))
 
-        fetch(`http://localhost:5000/quantityUpdate/${id}`, {
+        fetch(`https://food-delivery-website-server-ruby.vercel.app/quantityUpdate/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -84,7 +84,7 @@ const Cart = ({ crt }) => {
     const handleDelete = (id) => {
         console.log(id)
 
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://food-delivery-website-server-ruby.vercel.app/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

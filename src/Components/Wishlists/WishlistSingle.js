@@ -12,7 +12,7 @@ const WishlistSingle = ({ lists,refetch }) => {
 
     const handleWishlistDelete=(id)=> {
         console.log(id)
-        fetch(`http://localhost:5000/wishlistsProducts/${id}`,{
+        fetch(`https://food-delivery-website-server-ruby.vercel.app/wishlistsProducts/${id}`,{
             method: "DELETE"
         })
         .then((res)=> res.json())

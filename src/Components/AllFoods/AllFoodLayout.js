@@ -7,7 +7,7 @@ const AllFoodLayout = () => {
      const {data:catagorisName=[], isLoading}= useQuery({
         queryKey:["catagorisName"],
         queryFn: async ()=> {
-            const res = await fetch('http://localhost:5000/catagorisName')
+            const res = await fetch('https://food-delivery-website-server-ruby.vercel.app/catagorisName')
             const data = await res.json()
             return data;
         }

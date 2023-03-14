@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
         },
         {
             path: '/allfood',
-            loader:async()=> fetch('http://localhost:5000/allfood'),
+            loader:async()=> fetch('https://food-delivery-website-server-ruby.vercel.app/allfood'),
             element: <AllFoods></AllFoods>
         },
         {
@@ -60,14 +60,14 @@ export const router = createBrowserRouter([
             children: [
                 {
                     path: '/foods',
-                    loader:async()=> fetch('http://localhost:5000/allfood'),
+                    loader:async()=> fetch('https://food-delivery-website-server-ruby.vercel.app/allfood'),
                     element: <AllFoods></AllFoods>
                 },
                 {
                     path: "/foods/food/:title",
                     element: <CatagoryFoods></CatagoryFoods>,
                     loader: async ({params}) => {
-                        return fetch(`http://localhost:5000/itemsProducts/${params.title}`)
+                        return fetch(`https://food-delivery-website-server-ruby.vercel.app/itemsProducts/${params.title}`)
                     }
                 }
             ]

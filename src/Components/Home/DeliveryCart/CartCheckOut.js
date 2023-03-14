@@ -16,7 +16,7 @@ const CartCheckOut = () => {
     const { data: showcarts = [], isLoading, refetch } = useQuery({
         queryKey: ["showcarts", user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/showcarts?email=${user?.email}`);
+            const res = await fetch(`https://food-delivery-website-server-ruby.vercel.app/showcarts?email=${user?.email}`);
             const data = res.json()
             return data;
         }
