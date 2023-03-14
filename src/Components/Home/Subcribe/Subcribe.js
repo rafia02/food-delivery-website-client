@@ -11,7 +11,7 @@ const Subcribe = () => {
 
                 <div>
                 <input type="text" placeholder="Email" className="input input-bordered w-3/4" />
-                <input type="submit" value="subcribe" className='w-1/4 bg-rose-400 text-white font-bold py-3 rounded text-xl' />
+                <input type="submit" value="subcribe" className='w-1/4 bg-rose-400 text-white font-bold py-2 rounded-tr-lg rounded-br-lg text-xl' />
                 </div>
              </div>
         </div>
