@@ -7,7 +7,7 @@ const Footer = () => {
 
 
     return (
-        <div className='bg-rose-200'>
+        <div className='bg-[#F5F4EF]'>
 
             
 
