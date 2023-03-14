@@ -2,6 +2,7 @@ import React, { useContext, useReducer, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { BsCartFill, BsFillHeartFill, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { Contex } from '../../../Context/AuthProvider';
+import ProviteRoute from '../../ProviteRoute/ProviteRoute';
 
 
 
@@ -52,6 +53,15 @@ const SingleProduct = ({ manue }) => {
                     <BsStarFill></BsStarFill>
                     <BsStarHalf></BsStarHalf>
                 </div>
+                 
+
+                {/* <ProviteRoute>
+
+                <button onClick={()=>handleAddToCart(catagoris, picture, title, descreption, price, _id, _id)} className='flex justify-center p-1 rounded items-center mt-2 bg-rose-400 text-white font-bold '>
+                <BsCartFill className='mr-2'></BsCartFill>
+                     Add to cart
+                </button> 
+                </ProviteRoute> */}
 
                 <button onClick={()=>handleAddToCart(catagoris, picture, title, descreption, price, _id, _id)} className='flex justify-center p-1 rounded items-center mt-2 bg-rose-400 text-white font-bold '>
                 <BsCartFill className='mr-2'></BsCartFill>
