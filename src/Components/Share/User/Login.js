@@ -7,35 +7,36 @@ import { Contex } from '../../../Context/AuthProvider';
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const {userSingIn, userGoogleSingIn } = useContext(Contex)    
-    
-    
+    const { userSingIn, userGoogleSingIn } = useContext(Contex)
+
+
 
     const handleGoogle = () => {
-        const provider= new GoogleAuthProvider()
+        const provider = new GoogleAuthProvider()
         userGoogleSingIn(provider)
-        .then((res)=> {
-            console.log(res.user)
-            toast.success("Success Google Login..!")
-        })
-        .catch((err) => {
-            console.log(err)
-            toast.error("Sorry, Filed Google Login..!")
-        })
+            .then((res) => {
+                console.log(res.user)
+                toast.success("Success Google Login..!")
+            })
+            .catch((err) => {
+                console.log(err)
+                toast.error("Sorry, Filed Google Login..!")
+            })
     }
 
-    const handleLogin =(data) => {
+    const handleLogin = (data) => {
         console.log(data)
         userSingIn(data.email, data.password)
-        .then((res)=> {
-            const user = res.user;
-            console.log(user)
-            toast.success("Success Login...!")
-        })
-        .catch((err)=> {
-            console.log(err)
-            toast.error("Sorry, Filed Login...!")
-        })
+            .then((res) => {
+                const user = res.user;
+                console.log(user)
+                toast.success("Success Login...!")
+
+            })
+            .catch((err) => {
+                console.log(err)
+                toast.error("Sorry, Filed Login...!")
+            })
     }
 
 
@@ -45,39 +46,46 @@ const Login = () => {
 
 
     return (
-        <div className='flex justify-center items-center h-96 mt-24'>
+        <div className='w-1/2 mx-auto my-10'>
 
-            <div className='w-1/3  bg-gradient-to-b from-rose-200 py-10 px-8 '>
-                <h1 className='text-center font-serif text-3xl font-bold text-sky-400'>Login</h1>
-
-                <form onSubmit={handleSubmit(handleLogin)}>
-
-                    <div className="form-control w-full ">
-                        <label className="label"><span className="label-text font-serif text-lg"> Your Email</span> </label>
-                        <input type="email" placeholder="Name" {...register("email", { required: "Your Email required" })} className="input input-bordered w-full " />
-                        {errors.email && <span className='text-red-600 font-serif '> {errors.email.message} </span>}
+            <div>
+                <div className=' bg-rose-100 py-8 '>
+                    <h1 className='text-center  text-3xl font-bold text-rose-500'>Login</h1>
+                    <div className='text-center text-rose-700 mt-2'>
+                        <h1>User Email: check@gmail.com</h1>
+                        <h1>Password: 123456</h1>
                     </div>
 
+                    <form className='w-2/3 mx-auto' onSubmit={handleSubmit(handleLogin)}>
 
-
-                    <div className="form-control w-full ">
-                        <label className="label"><span className="label-text font-serif text-lg"> Password </span> </label>
-                        <input type="password" placeholder="Name" {...register("password", { required: "Your Password required" })} className="input input-bordered w-full " />
-                        {errors.password && <span className='text-red-600 font-serif '> {errors.password.message} </span>}
-                    </div>
-
-
-
+                        <div className="form-control w-full ">
+                            <label className="label"><span className="label-text font-serif text-lg"> Your Email</span> </label>
+                            <input type="email" placeholder="Name" {...register("email", { required: "Your Email required" })} className="input input-bordered w-full " />
+                            {errors.email && <span className='text-red-600 font-serif '> {errors.email.message} </span>}
+                        </div>
 
 
 
+                        <div className="form-control w-full ">
+                            <label className="label"><span className="label-text font-serif text-lg"> Password </span> </label>
+                            <input type="password" placeholder="Name" {...register("password", { required: "Your Password required" })} className="input input-bordered w-full " />
+                            {errors.password && <span className='text-red-600 font-serif '> {errors.password.message} </span>}
+                        </div>
 
-                    <input type="submit" value="Login" className='text-white    bg-gradient-to-r from-indigo-500 via-yellow-700 to-pink-500               w-full py-2 mt-6 font-medium text-lg' />
-                    <h1 className='font-serif'> Create new an account? <span> <Link to='/singup'>Sing up</Link> </span> </h1>
-                </form>
 
-                <input type="submit" onClick={ handleGoogle} value="Google" className='text-white bg-green-400 w-full py-2 mt-6 font-medium text-lg' />
-          
+
+
+
+
+
+                        <input type="submit" value="Login" className='text-white rounded bg-gradient-to-r from-rose-500 to-orange-400         w-full py-2 mt-6 font-medium text-lg' />
+                        <h1 className='font-serif'> Create new an account? <span> <Link className='text-rose-500 font-bold' to='/singup'>Sing up</Link> </span> </h1>
+                    </form>
+
+                   <div onClick={handleGoogle} value="Google" className='text-white rounded text-center w-2/3 mx-auto bg-gradient-to-r from-rose-500 to-orange-400 py-2 mt-6 font-medium text-lg'>Google</div>
+
+
+                </div>
             </div>
 
 

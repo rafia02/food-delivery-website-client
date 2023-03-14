@@ -28,12 +28,12 @@ const Register = () => {
 
 
     return (
-        <div className='flex justify-center items-center h-96 mt-24'>
+        <div className='w-1/2 mx-auto my-10 '>
 
-            <div className='w-1/3  bg-gradient-to-b from-rose-200 py-10 px-8 '>
-                <h1 className='text-center font-serif text-3xl font-bold text-sky-400'>Create New Account</h1>
+            <div className= 'bg-rose-100 py-8 '>
+                <h1 className='text-center  text-3xl font-bold text-rose-500'>Create New Account</h1>
 
-                <form onSubmit={handleSubmit(handleRegister)}>
+                <form  className='w-2/3 mx-auto' onSubmit={handleSubmit(handleRegister)}>
 
                     <div className="form-control w-full ">
                         <label className="label"><span className="label-text font-serif text-lg"> Your Name</span> </label>
@@ -63,8 +63,8 @@ const Register = () => {
 
 
 
-                    <input type="submit" value="Login" className='text-white    bg-gradient-to-r from-indigo-500 via-yellow-700 to-pink-500               w-full py-2 mt-6 font-medium text-lg' />
-                    <h1 className='font-serif'> Already have an account?  <span> <Link to="/login">Login</Link> </span>  </h1>
+                    <input type="submit" value="Sign Up" className='text-white rounded   bg-gradient-to-r from-rose-500 to-orange-400   w-full py-2 mt-6 font-medium text-lg' />
+                    <h1 className='font-serif'> Already have an account?  <span> <Link className='text-rose-500 font-bold' to="/login">Login</Link> </span>  </h1>
                 </form>
 
                 

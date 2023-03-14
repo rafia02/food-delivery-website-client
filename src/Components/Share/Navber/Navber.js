@@ -46,7 +46,7 @@ const Navber = () => {
 
                         setNotifiaction(notify)
 
-                       
+
                     })
                 }
             </div>
@@ -139,11 +139,15 @@ const Navber = () => {
 
 
                                 {
-                                    user?.email ? <li className="text-gray-600 font-bold hover:text-rose-500">
+                                    user.uid ? <li className="text-gray-600 font-bold hover:text-rose-500">
                                         <Link to="/" onClick={handleSingOut} >SingOut</Link>
-                                    </li> : <li className="text-gray-600 font-bold hover:text-rose-500">
-                                        <Link to="/login">Login</Link>
                                     </li>
+
+                                    :
+
+                                    <li className="text-gray-600 font-bold hover:text-rose-500">
+                                    <Link to="/login">Login</Link>
+                                </li>
                                 }
 
 

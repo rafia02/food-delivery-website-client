@@ -128,6 +128,7 @@ const handleAddToCart = (catagoris, picture, title, descreption, price, _id, id)
       .then(res => res.json())
       .then(data => {
           console.log(data)
+          toast.success('Successfully add to cart')
           forceUpdate();
       })
 

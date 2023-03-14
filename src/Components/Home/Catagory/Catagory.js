@@ -59,7 +59,7 @@ const Catagory = () => {
 
   return (
     <div className='my-10'>
-
+<h1 className="text-2xl font-bold text-center">Choose Your Manue Catagories</h1>
 
 
       <Swiper

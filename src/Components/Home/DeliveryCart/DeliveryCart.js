@@ -18,9 +18,9 @@ const DeliveryCart = () => {
 
 
 
-    if (loading) {
-        return <Spinner></Spinner>
-    }
+    // if (carts) {
+    //     return <Spinner></Spinner>
+    // }
 
 
 
