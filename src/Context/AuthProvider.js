@@ -77,8 +77,7 @@ const AuthProvider = ({ children }) => {
         quantity: 1 
 
     }
-<<<<<<< HEAD
-=======
+
    fetch('https://food-delivery-website-server-ruby.vercel.app/wishlistsProducts', {
     method:"POST",
     headers:{
@@ -95,7 +94,7 @@ const AuthProvider = ({ children }) => {
     console.log(err)
     toast.error("Sorry, Filed Requst Wishlists...!")
    })
->>>>>>> 728f41b338bb90627e254dbe9c296dba3d952e53
+
 
       fetch('http://localhost:5000/wishlistsProducts', {
         method:"POST",
@@ -138,11 +137,9 @@ const handleAddToCart = (catagoris, picture, title, descreption, price, _id, id)
   }
 
 
-<<<<<<< HEAD
+
     fetch(`http://localhost:5000/allcart`, {
-=======
-  fetch(`https://food-delivery-website-server-ruby.vercel.app/allcart`, {
->>>>>>> 728f41b338bb90627e254dbe9c296dba3d952e53
+
       method: 'POST',
       headers: {
           "content-type": "application/json"
