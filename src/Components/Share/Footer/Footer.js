@@ -9,10 +9,10 @@ const Footer = () => {
     return (
         <div className=''>
 
+            
 
-      
+            <footer className="footer p-10  text-black ">
 
-            <footer className="footer p-10  bg-rose-200 text-black ">
 
 
                 <div>
