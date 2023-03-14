@@ -5,6 +5,7 @@ import app from '../firebase.config';
 import toast from 'react-hot-toast';
 
 
+
 export const Contex = new createContext()
 const auth = getAuth(app)
 
@@ -16,6 +17,7 @@ const AuthProvider = ({ children }) => {
   const [notifiaction, setNotifiaction] = useState("0")
   const [itemsManue, setItemsManue] = useState([])
   const [user, setUser] = useState([])
+
 
 
 
@@ -75,23 +77,23 @@ const AuthProvider = ({ children }) => {
         quantity: 1 
 
     }
-   fetch('http://localhost:5000/wishlistsProducts', {
-    method:"POST",
-    headers:{
-        "content-type":"application/json"
-    },
-    body: JSON.stringify(wishListsProduct)
-   })
-   .then((res)=> res.json())
-   .then((data) => {
-    console.log(data)
-    toast.success("Success your wishlists products ")
-   })
-   .catch((err)=> {
-    console.log(err)
-    toast.error("Sorry, Filed Requst Wishlists...!")
-   })
 
+      fetch('http://localhost:5000/wishlistsProducts', {
+        method:"POST",
+        headers:{
+            "content-type":"application/json"
+        },
+        body: JSON.stringify(wishListsProduct)
+       })
+       .then((res)=> res.json())
+       .then((data) => {
+        console.log(data)
+        toast.success("Success your wishlists products ")
+       })
+       .catch((err)=> {
+        console.log(err)
+        toast.error("Sorry, Filed Requst Wishlists...!")
+       })
     
 }
 
@@ -102,7 +104,6 @@ const AuthProvider = ({ children }) => {
 
 
 const handleAddToCart = (catagoris, picture, title, descreption, price, _id, id) => {
-
 
   const cartProduct = {
       email: user.email,
@@ -118,7 +119,7 @@ const handleAddToCart = (catagoris, picture, title, descreption, price, _id, id)
   }
 
 
-  fetch(`http://localhost:5000/allcart`, {
+    fetch(`http://localhost:5000/allcart`, {
       method: 'POST',
       headers: {
           "content-type": "application/json"
@@ -131,6 +132,7 @@ const handleAddToCart = (catagoris, picture, title, descreption, price, _id, id)
           toast.success('Successfully add to cart')
           forceUpdate();
       })
+
 
 }
 

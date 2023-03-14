@@ -30,9 +30,9 @@ const Subcribe = () => {
     }
 
     return (
-        <div>
+        <div className="bg-rose-100">
 
-            <div className='w-1/2 mx-auto my-20'>
+            <div className='w-1/2  mx-auto p-10 mt-20'>
                 <h1 className='text-center text-3xl my-2 font-serif'>Stay Informed About Special Offers</h1>
 
                 <p className='text-center text-xl mt-1 mb-4 ' >For Exclusive Deals, Coupons, News and More!</p>

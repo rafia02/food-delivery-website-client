@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Contex } from '../../../Context/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -8,6 +8,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Register = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const {userCreate} = useContext(Contex)
+    const navigate = useNavigate()
 
 
 
@@ -20,6 +21,7 @@ const Register = () => {
             const user = res.user;
             console.log(user)
             toast.success("Success Sing Up...!")
+            navigate('/')
         } )
         .catch( (err) => console.log(err) )
      }

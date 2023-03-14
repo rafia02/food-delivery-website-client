@@ -4,10 +4,12 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { Contex } from '../../../Context/AuthProvider';
+import {useNavigate} from 'react-router-dom'
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const { userSingIn, userGoogleSingIn } = useContext(Contex)
+    const navigate = useNavigate()
 
 
 
@@ -17,6 +19,7 @@ const Login = () => {
             .then((res) => {
                 console.log(res.user)
                 toast.success("Success Google Login..!")
+                navigate('/')
             })
             .catch((err) => {
                 console.log(err)
@@ -31,6 +34,7 @@ const Login = () => {
                 const user = res.user;
                 console.log(user)
                 toast.success("Success Login...!")
+                navigate('/')
 
             })
             .catch((err) => {

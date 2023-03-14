@@ -16,6 +16,7 @@ import DeliveryCart from '../DeliveryCart/DeliveryCart';
 import CheckOutPage from '../../CheckOutPage/CheckOutPage';
 import BestTeam from '../BestTeam/BestTeam';
 import Subcribe from '../Subcribe/Subcribe';
+import {Link} from 'react-router-dom'
 
 
 
@@ -47,8 +48,8 @@ const Home = () => {
                         </div>
                         <div className='pb-10 px-5'>
                         
-                            <h1 className="text-xl mb-5 font-bold text-center">Your cart is curently unavailable</h1>
-                            <Button text={"Continue Shopping"}></Button>
+                            <h1 className="text-2xl mb-5 font-bold text-center">20% Discount For Eatch Product</h1>
+                           <Link to="/foods"><Button text={"Continue Shopping"}></Button></Link> 
                             
                         </div>
                     </div>

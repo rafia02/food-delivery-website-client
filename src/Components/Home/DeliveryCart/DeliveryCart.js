@@ -83,7 +83,7 @@ const DeliveryCart = () => {
 
                     <div className='pb-10 px-5 shadow-md p-10 my-5 w-3/4 md:w-1/2 mx-auto'>
 
-                        <h1 className="text-xl mb-5 font-bold text-center  ">Your cart is curently unavailable</h1>
+                        <h1 className="text-xl mb-5 font-bold text-center  ">Your cart is curently unavailable.lease  P</h1>
                         <div className='w-2/3  mx-auto'>
                             <Link className='w-full' to="/foods"><Button text={"Continue Shopping"}></Button></Link>
                         </div>
