@@ -15,6 +15,7 @@ import Button from '../../Share/Button/Button';
 import DeliveryCart from '../DeliveryCart/DeliveryCart';
 import CheckOutPage from '../../CheckOutPage/CheckOutPage';
 import BestTeam from '../BestTeam/BestTeam';
+import Subcribe from '../Subcribe/Subcribe';
 
 
 
@@ -72,6 +73,7 @@ const Home = () => {
             <Choose></Choose>
             <Count></Count>
             <BestTeam></BestTeam>
+            <Subcribe></Subcribe>
         </div>
     );
 };
