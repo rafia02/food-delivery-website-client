@@ -50,7 +50,7 @@ const Food = ({ food }) => {
 
 
                         <BsFillHeartFill className="text-2xl  duration-500 opacity-70 hover:opacity-100 hover:scale-105 skew-y-3 translate-x-4  "
-                            onClick={() => handleWishLists2(catagoris, picture, title, descreption, price, _id)}
+                            onClick={() => handleWishLists(catagoris, picture, title, descreption, price, _id)}
 
                         ></BsFillHeartFill>
                     </div>
@@ -74,7 +74,7 @@ const Food = ({ food }) => {
                     <BsStarHalf></BsStarHalf>
                 </div>
 
-                <button onClick={() => handleAddToCart2(catagoris, picture, title, descreption, price, _id, _id)} className='flex justify-center p-1 rounded items-center mt-2 bg-rose-400 text-white font-bold '>
+                <button onClick={() => handleAddToCart(catagoris, picture, title, descreption, price, _id, _id)} className='flex justify-center p-1 rounded items-center mt-2 bg-rose-400 text-white font-bold '>
                     <BsCartFill className='mr-2'></BsCartFill>
                     Add to cart
                 </button>
