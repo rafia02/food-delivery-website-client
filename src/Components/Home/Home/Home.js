@@ -59,11 +59,6 @@ const Home = () => {
             </div>
 
 
-
-
-
-
-
             <div>
                 {
                     itemsManue ? <ItemsProduct></ItemsProduct> : <Spinner></Spinner>

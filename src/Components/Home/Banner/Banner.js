@@ -6,12 +6,9 @@ const Banner = () => {
   const slideRef = useRef();
 
   const featuredProducts = [
-    // "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/216054.jpg",
-    // "https://www.eatthis.com/wp-content/uploads/sites/4/2022/04/burger-fries.jpg?quality=82&strip=all",
-    // "https://www.shutterstock.com/image-photo/variety-ice-cream-scoops-cones-600w-642062308.jpg",
+
     "https://assets.bonappetit.com/photos/6228c6754fefeeda72129a4f/16:9/w_4191,h_2357,c_limit/BA0422cake01.jpg",
     "https://eatsy.bold-themes.com/cupcakes/wp-content/uploads/sites/3/2021/03/hero_delivery.jpg",
-    // "https://www.allrecipes.com/thmb/IKNsbRltV8YzbkzKsSWr4_Gt2OM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/6665215-e809c5685566417d86ace12860feae06.jpg",
     "https://www.polarbd.com/images/sliders/home/homeslide02.jpg",
     "https://www.polarbd.com/images/sliders/home/homeslide03.jpg",
     "https://images.deliveryhero.io/image/fd-bd/LH/jbwv-hero.jpg?width=1000&height=250&quality=45",

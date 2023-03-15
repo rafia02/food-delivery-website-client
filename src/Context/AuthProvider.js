@@ -78,6 +78,7 @@ const AuthProvider = ({ children }) => {
 
     }
 
+
    fetch('https://food-delivery-website-server-ruby.vercel.app/wishlistsProducts', {
     method:"POST",
     headers:{
@@ -96,7 +97,8 @@ const AuthProvider = ({ children }) => {
    })
 
 
-      fetch('http://localhost:5000/wishlistsProducts', {
+
+      fetch('https://food-delivery-website-server-ruby.vercel.app/wishlistsProducts', {
         method:"POST",
         headers:{
             "content-type":"application/json"
@@ -138,7 +140,7 @@ const handleAddToCart = (catagoris, picture, title, descreption, price, _id, id)
 
 
 
-    fetch(`http://localhost:5000/allcart`, {
+  fetch(`https://food-delivery-website-server-ruby.vercel.app/allcart`, {
 
       method: 'POST',
       headers: {

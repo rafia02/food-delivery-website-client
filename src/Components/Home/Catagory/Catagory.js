@@ -14,7 +14,7 @@ import { Contex } from '../../../Context/AuthProvider';
 
 
 const Catagory = () => {
-  const {itemsManue,setItemsManue} = useContext(Contex)
+  const { itemsManue, setItemsManue } = useContext(Contex)
 
 
 
@@ -27,10 +27,10 @@ const Catagory = () => {
     }
   })
 
-  
 
 
-  if(isLoading){
+
+  if (isLoading) {
     <Spinner></Spinner>
   }
 
@@ -40,17 +40,13 @@ const Catagory = () => {
 
 
 
-  const handleManueItem =(id)=>{
+  const handleManueItem = (id) => {
 
-   
+
 
     fetch(`https://food-delivery-website-server-ruby.vercel.app/itemsProducts/${id}`)
-    .then(res => res.json())
-    .then(data => setItemsManue(data))
-
-
-  
-
+      .then(res => res.json())
+      .then(data => setItemsManue(data))
   }
 
 
@@ -59,7 +55,7 @@ const Catagory = () => {
 
   return (
     <div className='my-10'>
-<h1 className="text-2xl font-bold text-center">Choose Your Manue Catagories</h1>
+      <h1 className="text-2xl opacity-90  font-bold text-center mb-5 ">CHOOSE YOUR MENU CATAGORIES</h1>
 
 
       <Swiper
@@ -97,15 +93,15 @@ const Catagory = () => {
 
         {
 
-          catagoris?.map(item => <Link> <SwiperSlide  key={item._id}  onClick={()=>handleManueItem(item.title)}  className=' text-rose-600 hover:bg-rose-100 hover:text-rose-700   p-1   duration-500 rounded drop-shadow-xl '>
+          catagoris?.map(item => <Link> <SwiperSlide key={item._id} onClick={() => handleManueItem(item.title)} className=' text-rose-600 hover:bg-rose-100 hover:text-rose-700   p-1   duration-500 rounded drop-shadow-xl '>
 
             <div className='text-center' >
-                
+
               <div className="avatar">
                 <div className="w-28 rounded-full">
                   <img src={item.img} alt="" />
                 </div>
-                
+
               </div>
 
 
@@ -114,7 +110,7 @@ const Catagory = () => {
               {/* <button className='mb-4 mt-2 btn bg-yellow-500 btn-xs'>More Items</button> */}
             </div>
 
-          </SwiperSlide> 
+          </SwiperSlide>
           </Link>)
 
         }
