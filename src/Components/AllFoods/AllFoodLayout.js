@@ -33,6 +33,7 @@ const AllFoodLayout = () => {
                      {
                         catagorisName.map((name)=><li
                          key={name._id}
+                         className=" font-serif font-bold rounded my-3"
                         >
                             <Link to={`/foods/food/${name.title}`}>{name.title}</Link>
                         </li> )
