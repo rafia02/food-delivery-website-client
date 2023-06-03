@@ -14,6 +14,9 @@ const AllFoodLayout = () => {
      })
 
 
+     console.log(catagorisName)
+
+     
 
     return (
         <div className="drawer drawer-mobile">

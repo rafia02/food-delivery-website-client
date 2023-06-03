@@ -4,7 +4,7 @@ import'./Choose.css'
 const Choose = () => {
 
     return (
-        <div className='mt-16'>
+        <div className='mt-44'>
            <h1 className='text-4xl font-serif mt-10 text-center '> WHY SHOP WITH US? </h1>
 
 

@@ -17,6 +17,10 @@ import CheckOutPage from '../../CheckOutPage/CheckOutPage';
 import BestTeam from '../BestTeam/BestTeam';
 import Subcribe from '../Subcribe/Subcribe';
 import {Link} from 'react-router-dom'
+import Reviews from '../Reviews/Reviews';
+import Specialty from '../Specialty/Specialty';
+import SliderManu from '../SliderManu/SliderManu';
+import HowWorkIt from '../HowWorkIt/HowWorkIt';
 
 
 
@@ -67,8 +71,12 @@ const Home = () => {
             </div>
              
             <Choose></Choose>
+            <SliderManu></SliderManu>
             <Count></Count>
             <BestTeam></BestTeam>
+            <Specialty></Specialty>
+            <Reviews></Reviews>
+            <HowWorkIt></HowWorkIt>
             <Subcribe></Subcribe>
         </div>
     );

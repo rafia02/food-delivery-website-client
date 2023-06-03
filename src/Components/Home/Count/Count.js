@@ -9,7 +9,7 @@ const Count = () => {
 
      return (
           <ScrollTrigger onEnter={ ()=>setCount(true) }  onExit={ ()=>setCount(false) } >
-               <div className=' w-full mx-auto mt-16 mb-24' >
+               <div className=' w-full mx-auto my-32' >
 
 
                     <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ' >
