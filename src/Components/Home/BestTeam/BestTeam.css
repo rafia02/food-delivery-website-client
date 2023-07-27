@@ -1,3 +1,18 @@
 .custom:hover h1 {
-    color: #FB7185
+    color: #FB7185;
+    animation-name: solycolor;
+    animation-duration: 8s;
+    animation-fill-mode: forwards; 
+    transition: ease-in;
+}
+
+@keyframes solycolor {
+    0%{
+        color: #FB7185;
+    }50%{
+        color: #FB7185;
+    }
+    100%{
+        color: #FB7185;
+    }
 }

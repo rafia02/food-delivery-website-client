@@ -27,7 +27,7 @@ const BestTeam = () => {
                        
 
 
-                    <div className=' pb-4 custom   shadow-sm hover:bg-[#FFFFFF]'>
+                    <div className=' pb-4 custom  shadow-sm hover:bg-[#FFFFFF]'>
                         <img className='w-full' src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/team3.png" alt="" />
                         <h1 className='text-center lg:text-start text-2xl ml-2 font-semibold text-[#231900] mt-3 mb-3'>Andre Smith</h1>
                         <p className='text-center lg:text-start ml-2'>Professor</p>
