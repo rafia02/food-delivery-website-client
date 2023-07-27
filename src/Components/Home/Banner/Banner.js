@@ -7,10 +7,10 @@ const Banner = () => {
 
   const featuredProducts = [
 
-    "https://assets.bonappetit.com/photos/6228c6754fefeeda72129a4f/16:9/w_4191,h_2357,c_limit/BA0422cake01.jpg",
-    "https://eatsy.bold-themes.com/cupcakes/wp-content/uploads/sites/3/2021/03/hero_delivery.jpg",
-    "https://www.polarbd.com/images/sliders/home/homeslide02.jpg",
-    "https://www.polarbd.com/images/sliders/home/homeslide03.jpg",
+    "http://on3-step.com/tf/dbento/dbento/images-slider/3.jpg",
+    "http://on3-step.com/tf/dbento/dbento/images-slider/1.jpg",
+    "http://on3-step.com/tf/dbento/dbento/images-slider/2.jpg",
+    "http://on3-step.com/tf/dbento/dbento/images-slider/3.jpg",
     "https://images.deliveryhero.io/image/fd-bd/LH/jbwv-hero.jpg?width=1000&height=250&quality=45",
     "https://www.modernfoods.co.in/wp-content/uploads/2017/12/plum-cake-banner.png",
     "https://www.winni.in/celebrate-relations/wp-content/uploads/2019/03/plum-cake.jpg"

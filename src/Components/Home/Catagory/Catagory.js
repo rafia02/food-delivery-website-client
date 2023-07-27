@@ -11,7 +11,8 @@ import Spinner from '../../Share/Spinner/Spinner';
 import ItemsProduct from './ItemsProduct'
 import { useContext } from 'react';
 import { Contex } from '../../../Context/AuthProvider';
-
+import Lottie from "lottie-react";
+import loading from '../../../images/animation_lkk3yb4f.json'
 
 const Catagory = () => {
   const { itemsManue, setItemsManue } = useContext(Contex)
@@ -31,7 +32,7 @@ const Catagory = () => {
 
 
   if (isLoading) {
-    <Spinner></Spinner>
+    return  <Lottie animationData={loading}></Lottie>
   }
 
 
