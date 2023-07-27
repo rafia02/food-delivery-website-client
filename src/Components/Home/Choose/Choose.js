@@ -42,7 +42,7 @@ const Choose = () => {
 
                   {/* 2 colam 1 row  */}
 
-                  <div className='flex flex-col md:flex-row justify-between mt-10 mb-14'>
+                  <div className='flex flex-col md:flex-row justify-between gap-5 mt-10 mb-14'>
 
                   <div className='bg-[#ffffff] shadow-md w-full lg:w-1/3 py-10 px-8  rounded-tl-[80px] hover:rounded-tl-none rounded-br-[80px] hover:rounded-br-none ease-linear duration-700  hover:rounded-tr-[80px] hover:rounded-bl-[80px] '>
                            <img className='w-15 h-12 mb-6'  src="https://foodfirst.org/wp-content/uploads/2022/04/support_icons_4.png" alt="" />
