@@ -11,7 +11,7 @@ const BestTeam = () => {
 
 
 
-               <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-16 ml-6 gap-10'>
+               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-16 ml-6 gap-10'>
                     <div className=' pb-4 custom bg-[#F5F5F5] shadow-sm hover:bg-[#FFFFFF]'>
                         <img className='w-full' src="https://marketplace.foodotawp.com/wp-content/uploads/2021/05/team1.png" alt="" />
                         <h1 className='text-center lg:text-start text-2xl ml-2 font-semibold text-[#231900] mt-3 mb-3'>Alizeh Anderson</h1>
