@@ -56,7 +56,7 @@ const Catagory = () => {
 
   return (
     <div className='my-10'>
-      <h1 className="text-2xl opacity-90  font-bold text-center mb-5 ">CHOOSE YOUR MENU CATAGORIES</h1>
+      <h1 className="text-2xl opacity-90 font-serif font-bold text-center mb-5 ">CHOOSE YOUR MENU CATAGORIES</h1>
 
 
       <Swiper

@@ -15,8 +15,8 @@ const Specialty = () => {
 
        <div className='w-full flex justify-center  flex-col items-start'>
           <div className=' w-full md:w-3/5 mt-10 md:mt-0'>
-                  <h3 className='text-5xl font-bold text-center md:text-start'>The Specialty Of The House</h3>
-                  <p className='my-6 text-center md:text-start '>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, ea laudantium mollitia alias minima officiis atque hic praesentium dicta illum nesciunt iure reprehenderit, laboriosam libero?</p>
+                  <h3 className='text-3xl md:text-5xl font-bold text-center md:text-start'>The Specialty Of The House</h3>
+                  <div className='my-6 px-10 md:px-0 text-center md:text-start '>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, ea laudantium mollitia alias minima officiis atque hic praesentium dicta illum nesciunt iure reprehenderit, laboriosam libero?</div>
                   <button className='text-white ml-60 md:ml-0 my-10 md:my-0 bg-rose-400 font-bold rounded py-4 px-4'>ORDER NOW</button>
           </div>
        </div>

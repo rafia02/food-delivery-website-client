@@ -44,8 +44,8 @@ const SingleProduct = ({ manue }) => {
 
 
     return (
-        <div className="rounded  bg-rose-50 hover:shadow-md">
-            <figure><img className='w-full h-56 rounded' src={picture} alt="" /></figure>
+        <div className="rounded mx-5  bg-rose-50 hover:shadow-md">
+            <figure><img className='w-full h-60 rounded' src={picture} alt="" /></figure>
             <div className="card-body ">
                 <div className='flex justify-between items-center'>
                     <div className='flex justify-center items-center '>

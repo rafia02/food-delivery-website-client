@@ -4,12 +4,12 @@ import'./Choose.css'
 const Choose = () => {
 
     return (
-        <div className='mt-44'>
-           <h1 className='text-4xl font-serif mt-10 text-center '> WHY SHOP WITH US? </h1>
+        <div className='mt-20 md:mt-40'>
+           <h1 className='text-2xl md:text-4xl font-serif mb-5 text-center '> WHY SHOP WITH US? </h1>
 
 
              
-             <div className='w-4/5 mx-auto  image py-28  '>
+             <div className='w-4/5 mx-auto  image  md:py-28  '>
 
                   <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
 

@@ -33,7 +33,7 @@ const Home = () => {
 
 
     return (
-        <div>
+        <div className=''>
 
 
             <div className='flex flex-col md:flex-row'>
@@ -44,7 +44,7 @@ const Home = () => {
                 </div>
 
 
-                <div className=' w-full md:w-1/4 mt-10 md:mt-0 '>
+                <div className='hidden md:block w-full md:w-1/4 mt-10 md:mt-0 '>
 
                     <div className='  '>
                         <div>
